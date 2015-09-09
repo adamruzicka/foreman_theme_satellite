@@ -35,17 +35,17 @@ Find.find('.') do |path|
   next if path == "./rename.rb"
 
   # Change content on all files
-  system( %Q{sed 's/foreman_plugin_template/#{snake}/g' -i #{path} } )
-  system( %Q{sed 's/ForemanPluginTemplate/#{camel}/g'   -i #{path} } )
+  system( %Q{sed 's/foreman_theme/#{snake}/g' -i #{path} } )
+  system( %Q{sed 's/ForemanTheme/#{camel}/g'   -i #{path} } )
 end
 
 Find.find('.') do |path|
   # Change all the paths to the new snake_case name
-  if path =~ /foreman_plugin_template/i
-    new = path.gsub('foreman_plugin_template',snake)
+  if path =~ /foreman_theme/i
+    new = path.gsub('foreman_theme',snake)
     # Recursively copy the directory and store the original for deletion
     # Check for $ because we don't need to copy template/hosts for example
-    if File.directory?(path) && path =~ /foreman_plugin_template$/i
+    if File.directory?(path) && path =~ /foreman_theme$/i
       FileUtils.cp_r(path, new)
       old_dirs << path
     else
@@ -58,7 +58,7 @@ end
 # Clean up
 FileUtils.rm_rf(old_dirs)
 
-FileUtils.mv('README.plugin.md','README.md')
+
 
 puts "All done!"
 puts "Add this to Foreman's bundler configuration:"

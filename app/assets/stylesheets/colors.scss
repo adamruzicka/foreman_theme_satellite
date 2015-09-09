@@ -1,5 +1,14 @@
-//allways import the original file from the core.
 @import "/usr/share/foreman/app/assets/stylesheets/colors.scss";
 
-//add css to override,
-$primary_color: blue;
+$primary_color: #393F44;
+$border_color: #5F666C;
+$brand_color: #CC0000;
+
+$primary_gradient_start: #474C51;
+$primary_gradient_end: #393F44;
+
+$selected_gradient_start: #72757A;
+$selected_gradient_end: #64686C;
+
+$hover_gradient_start: #5c6165;
+$hover_gradient_end: #4b5053;

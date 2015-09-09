@@ -1,6 +1,6 @@
-//this file needs the include_foreman method, this method is needed for any file  that the overriden file uses sprockets require.
+//this is the only file that need include_foreman method.
 //=include_foreman stylesheets/application.scss
-@import "/usr/share/foreman/app/assets/stylesheets/login.scss";
+@import  "/usr/share/foreman/app/assets/stylesheets/application.scss";
 
 .avatar{
   &.small{

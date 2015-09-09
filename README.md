@@ -1,4 +1,4 @@
-# ForemanTheme
+# ForemanThemeSatellite
 
 This is a plugin that enables building a theme for Foreman.
 It knows to inject its assets before the core ones, so

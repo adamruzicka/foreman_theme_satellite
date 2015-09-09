@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foreman_theme (0.0.1)
+    foreman_theme_satellite (0.0.1)
       deface
 
 GEM
@@ -116,6 +116,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  foreman_theme!
+  foreman_theme_satellite!
   sass-rails
   sprockets-rails (~> 2.3.2)

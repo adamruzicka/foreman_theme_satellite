@@ -1,8 +1,8 @@
 [main]
 host = https://www.transifex.com
 
-[foreman.foreman_theme]
-file_filter = locale/<lang>/foreman_theme.po
-source_file = locale/foreman_theme.pot
+[foreman.foreman_theme_satellite]
+file_filter = locale/<lang>/foreman_theme_satellite.po
+source_file = locale/foreman_theme_satellite.pot
 source_lang = en
 type = PO

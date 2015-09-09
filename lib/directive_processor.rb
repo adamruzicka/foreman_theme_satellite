@@ -1,4 +1,4 @@
-module ForemanTheme
+module ForemanThemeSatellite
 
   module OverrideAssets
 
