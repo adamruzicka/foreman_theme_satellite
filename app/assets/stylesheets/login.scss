@@ -1,7 +1,5 @@
 @import  "/usr/share/foreman/app/assets/stylesheets/login.scss";
 
-@import "colors";
-
 .login-page {
 }
 
@@ -13,7 +11,6 @@
 
 .login-page #brand img {
   display: block;
-  // height: 84px;
   margin: 0;
   max-width: 100%;
 }
@@ -43,5 +40,11 @@
 
 .login-page .container {
   padding-top: 20px;
+}
+
+.login-page #brand img {
+  height: 19px;
+  width: 270px;
+  margin-bottom: 1px;
 }
 

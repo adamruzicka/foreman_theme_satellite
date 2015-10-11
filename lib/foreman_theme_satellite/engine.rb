@@ -1,16 +1,29 @@
+require 'rubygems'
 require 'deface'
+require 'debugger'
+
 
 module ForemanThemeSatellite
 
   class Engine < ::Rails::Engine
     engine_name 'foreman_theme_satellite'
 
-    config.autoload_paths += Dir["#{config.root}/vendor"]
+    config.to_prepare do
+      ApplicationController.helper(ThemeLayoutHelper)
+    end
 
+    config.autoload_paths += Dir["#{config.root}/app/overrides"]
+    config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
+    config.autoload_paths += Dir["#{config.root}/app/helpers"]
+
+    config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
     # Add any db migrations
     initializer "foreman_theme_satellite.load_app_instance_data" do |app|
       app.config.paths['db/migrate'] += ForemanThemeSatellite::Engine.paths['db/migrate'].existent
+      # app.config.railties_order = [ForemanThemeSatellite::Engine, :main_app, :all]
+
     end
+
 
     initializer 'foreman_theme_satellite.register_plugin', :after=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_theme_satellite do
@@ -37,7 +50,7 @@ module ForemanThemeSatellite
 
       assets_to_override =
         Dir.chdir(root) do
-          Dir['app/assets/**/*'].map do |f|
+          Dir['app/assets/images'].map do |f|
             f.split(File::SEPARATOR, 4).last
           end
         end
@@ -56,10 +69,21 @@ module ForemanThemeSatellite
     #Include concerns in this config.to_prepare block
     config.to_prepare do
       begin
-        Host::Managed.send(:include, ForemanThemeSatellite::HostExtensions)
-        HostsHelper.send(:include, ForemanThemeSatellite::HostsHelperExtensions)
+
+        # ProvisioningTemplatesHelper.send :include, ConfigTemplatesThemeHelper
+        # ThemeLayoutHelper.send :include, ThemeLayoutHelper::Theme
+        # Foreman::Controller::SmartProxyAuth.send :include, SmartProxyAuth
+        # ApplicationController.helper(ThemeLayoutHelper)
+        ::ApplicationHelper.send(:include, ThemeApplicationHelper)
+        ::LayoutHelper.send(:include, ThemeLayoutHelper)
+        Foreman::Model::Openstack.send :include, Openstack
+         Foreman::Model::Ovirt.send :include, Ovirt
+         Realm.send :include, RealmTheme
+        #
+        # Host::Managed.send(:include, ForemanThemeSatellite::HostExtensions)
+        # HostsHelper.send(:include, ForemanThemeSatellite::HostsHelperExtensions)
       rescue => e
-        puts "ForemanThemeSatellite: skipping engine hook (#{e.to_s})"
+        puts "ForemanThemeSatellite: skipping engine hook (#{e.to_s})xxxxxxxxxxxxxxxx"
       end
     end
 
@@ -76,10 +100,9 @@ module ForemanThemeSatellite
     end
 
     initializer 'foreman_theme_satellite.overrides' do |app|
+
       # pre pending plugin path to the sass @import method in order for it to search foreman_theme_satellite for files before it does it in the local dir
       Rails.application.config.sass.load_paths << "#{config.root}/app/assets/stylesheets"
-      Rails.application.config.assets.paths << config.root.join('vendor', 'fonts')
-
       #adding the override method "include_foreman" to sprockets engine
       require "directive_processor"
       Rails.application.assets.unregister_processor('text/css', Sprockets::DirectiveProcessor)

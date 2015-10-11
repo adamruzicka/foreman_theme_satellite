@@ -51,6 +51,7 @@ GEM
       polyglot
       rails (>= 3.1)
     erubis (2.7.0)
+    get_pomo (0.9.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -117,5 +118,6 @@ PLATFORMS
 
 DEPENDENCIES
   foreman_theme_satellite!
+  get_pomo
   sass-rails
   sprockets-rails (~> 2.3.2)
