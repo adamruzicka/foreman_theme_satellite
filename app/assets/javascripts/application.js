@@ -1,4 +1,4 @@
-//= include_foreman javascripts/application.js
+//= include /home/agoldboi/git/foreman/app/assets/javascripts/application.js
 
 function mark_params_override(){
     $('#inherited_parameters .override-param').removeClass('override-param');

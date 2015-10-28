@@ -1,5 +1,10 @@
+//=include /home/agoldboi/git/foreman/app/assets/stylesheets/application.scss
+/*
+ *= require vendor
+ *= require_self
+ *= require_tree .
+ */
 //this is the only file that need include_foreman method.
-//=include_foreman stylesheets/application.scss
 @import  "/usr/share/foreman/app/assets/stylesheets/application.scss";
 
 .avatar{
