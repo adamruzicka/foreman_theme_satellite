@@ -1,4 +1,4 @@
-//= include  /home/agoldboi/git/foreman/app/assets/javascripts/dashboard.js
+//= include_foreman javascripts/dashboard.js
 
 function start_gridster(){
     var gridster = $(".gridster>ul").gridster({

@@ -41,20 +41,6 @@ rake locale:pack
 RAILS_ENV=production rake assets:precompile
 
 
-#####For scss/css
-
-- On top of the new file add `@import path/*filename` to the core files is need(if installed from package the path will be /usr/share/foreman/app/assets/stylesheets).
-
-*Imprtant note* : add `//=include_foreman stylesheets/*filename` If the core file includes a sprockets //=require*.
-
-#####For javascripts
-
-- On top of the new file add `//=include_foreman javascripts/*filename`.
-
-#####For images
-
-- Add a file to the assets/images with the same name as the image you want to override.
-
 ## How the translation dictionary works
 
 The translation process and packaging will work in the following way:
@@ -75,10 +61,8 @@ example : msgid  "welcome to foreman"
 original [language].po: msgid  "welcome to foreman"
                              msgstr ""
 
-                                  ||
-
-                   turn to : msgid  "welcome to satellite"
-                             msgstr ""
+turn to : msgid  "welcome to satellite"
+          msgstr ""
 
 
 *this file will be sent for translation.
@@ -94,7 +78,7 @@ example(it) : msgid  "welcome to satellite"
 example(it) :  match it.po msgid with en.po msgstr and place en.po msgid instead.
 
 translated file(it)-  msgid  "welcome to satellite"   <=     en.po-  msgid  "welcome to foreman"
-                      msgstr "Benvenuto su satellite"     =>         msgstr "welcome to satellite"
+                      msgstr "Benvenuto su satellite"    =>         msgstr "Benvenuto su satellite"
 
 ***the outcome file will be the it.po file:
 outcome(it.po):       msgid  "welcome to foreman"

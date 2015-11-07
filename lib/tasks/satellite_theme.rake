@@ -1,7 +1,7 @@
 
-DICTIONARY = {"Foreman" => "Satellite", "foreman" => "satellite", "smart-proxy" => "capsule", "Smart-proxy" => "Capsule",
-              "smart-proxies" => "capsules", "Smart-proxies" => "Capsules", "Smart Proxy" => "Capsule", "smart proxy" => "capsule","Smart-Proxies" => "capsules",
-              "Compute profile" => "VM Attributes", "compute profile" => "VM Attributes", "oVirt" => "RHEV", "ovirt" => "RHEV", "Ovirt" => "RHEV",
+DICTIONARY = {"Foreman" => "Satellite", "foreman" => "satellite", "smart-proxy" => "capsule", "Smart-proxy" => "Capsule", "smart proxies" => "capsules", "Smart proxies" => "Capsules", "Smart Proxies" => "Capsules",
+              "smart-proxies" => "capsules", "Smart-proxies" => "Capsules", "Smart Proxy" => "Capsule", "smart proxy" => "capsule", "Smart-Proxies" => "capsules",
+              "Smart proxy" => "capsule", "Compute profile" => "VM Attributes", "compute profile" => "VM Attributes", "oVirt" => "RHEV", "ovirt" => "RHEV", "Ovirt" => "RHEV",
               "FreeIPA" => "Red Hat Identity Management", "OpenStack" => "RHEL OpenStack Platform", "openstack" => "RHEL OpenStack Platform",
               "Openstack" => "RHEL OpenStack Platform", "Proxy" => "Capsule", "proxy" => "Capsule", "Proxies" => "Capsules", "proxies" => "Capsules"}
 

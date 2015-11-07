@@ -10,7 +10,7 @@ module ForemanThemeSatellite
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/helpers"]
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
-
+    engine_peth = config.root
     # Add any db migrations
     initializer "foreman_theme_satellite.load_app_instance_data" do |app|
       app.config.paths['db/migrate'] += ForemanThemeSatellite::Engine.paths['db/migrate'].existent
@@ -50,11 +50,16 @@ module ForemanThemeSatellite
 
     #Include concerns in this config.to_prepare block
     config.to_prepare do
-
-      assets_to_override = ["/home/agoldboi/git/foreman_theme_satellite/app/assets/stylesheets",
-                            "/home/agoldboi/git/foreman_theme_satellite/app/assets/images",
-                            "/home/agoldboi/git/foreman_theme_satellite/app/assets/javascripts"]
+      assets_to_override = ["#{engine_peth}/app/assets/stylesheets",
+                            "#{engine_peth}/app/assets/images",
+                            "#{engine_peth}/app/assets/javascripts"]
       assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
+      require "directive_processor"
+      Rails.application.assets.unregister_processor('text/css', Sprockets::DirectiveProcessor)
+      Rails.application.assets.unregister_processor('application/javascript', Sprockets::DirectiveProcessor)
+      # registering the new engine override
+      Rails.application.assets.register_processor('text/css', ForemanThemeSatellite::OverrideAssets::DirectiveProcessor)
+      Rails.application.assets.register_processor('application/javascript', ForemanThemeSatellite::OverrideAssets::DirectiveProcessor)
       # Rails.application.config.sass.load_paths << "/home/agoldboi/git/foreman_theme_satellite/app/assets/stylesheets"
       begin
         Foreman::Model::Openstack.send :include, Openstack
