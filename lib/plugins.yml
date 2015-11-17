@@ -1,0 +1,4 @@
+:previous_version: "SATELLITE-6.1.0"
+:plugins:
+  foreman: ""
+  hammer-cli: ""

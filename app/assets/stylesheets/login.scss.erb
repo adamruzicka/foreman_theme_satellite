@@ -1,0 +1,49 @@
+@import  "<%= Rails.root %>/app/assets/stylesheets/login.scss";
+$bg-img: image-url('login_bg.jpg');
+
+@media (min-width: 768px){
+  .login-page #brand {
+    top: -70px;
+  }
+}
+
+.login-page #brand img {
+  display: block;
+  margin: 0;
+  max-width: 100%;
+}
+
+.login-page #badge {
+  display: block;
+  margin: 0 auto 70px;
+  padding-top: 20px;
+  position: relative;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .login-page #badge {
+    float: right;
+    margin-right: 64px;
+    margin-top: 50px;
+  }
+}
+
+.login-page {
+  height: 100%;
+  background: #1d2226;
+  background-image: $bg-img;
+  background-size: 100% auto;
+  color: #fff;
+}
+
+.login-page .container {
+  padding-top: 20px;
+}
+
+.login-page #brand img {
+  height: 19px;
+  width: 270px;
+  margin-bottom: 1px;
+}
+

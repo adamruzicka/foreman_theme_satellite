@@ -16,6 +16,4 @@ Gem::Specification.new do |s|
   s.add_dependency "deface"
   s.add_dependency "get_pomo"
   s.add_dependency "activesupport"
-
-
 end

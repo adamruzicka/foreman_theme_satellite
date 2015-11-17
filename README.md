@@ -1,106 +1,221 @@
-# ForemanThemeSatellite
+## ForemanThemeSatellite
 
-This is a plugin based on foreman_theme plugin.
-It knows to inject its assets before the core ones, so
-if an asset with the same name exists both in core and
-in the plugin - plugin's one will be used.
-This concept allows us to replace images, javascript files and
-css files completely.
-It switches the needed texts(e.g foreman => satellite) by using the gettext gem
-and creats a dictionary.
+### Goals:
+1. Make downstream release automated.
+2. Have the same code base for all upstream/downstream projects.
+3. Create one place to insert all the changes from upstream to downstream (1 project changes vs all projects).
+4. Usage of downstream translations for upstream use.
 
-## Installation
+### Needed changes:
+Moving from upstream to downstream (from branding perspective) require some changes:
 
-See [How_to_Install_a_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin)
-for how to install Foreman plugins.
-This plugin counts on having foreman installed on /usr/share in case it isn't please use "ln -s foreman_dir_path /usr/share/foreman
+1. images/logos, css.
+2. functionality. (overriding provider_friendly_name of compute resources - e.g. openstack model to return “RHEL OPENSTACK PLATFORM” instead of “OPENSTACK”)
+3. views.(adding red hat logo on login page)
+4. strings, using satellite_branded strings instead of foreman_branded (foreman,smart-proxy..etc).
 
-## Before packaging
-Those steps need to be made.
-#### step 1:
-rake create_english_dictionary
-#### step 2:
-rake before_translation
-#### step 3:
-place the tranlated files in the locale/{language}
-#### step 4:
-rake after_translation
-#### step 5:
-rake locale:pack
+Example:
 
-## Usage
-For using this plugin and turning foreman into satellite do the following steps
-#### step 1:
-clone this project.
-move to foreman dir, and place it in your gemfile as "foreman_theme_satellite".
-#### step 2:
-rake create_english_dictionary
-#### step 3:
-rake locale:pack
-#### step 4:
-RAILS_ENV=production rake assets:precompile
+   ![Exmaple usage](readme_files/transition.png)
+
+## Usage:
+
+1) Run-time dependency:
+  * The plugin uses deface (app/overrides/satellite_name_override.rb) for replacing branded views.
+  * Monkey-patching for replacing branded functions.
+  * Changing assets load order to prioritize loading plugin’s branded assets instead of foreman’s upstream ones.
+
+2) Internal-tool:
+  * The plugin uses i18n functionality in order to switch foreman_branded strings (that were replaced in code) with satellite_branded strings.
+  In order to understand how the plugin works it’s first needed to understand i18n functionality: each language has a .po file with paris of
+  msgid/msgstr which is used like a dictionary.(use as an internal tool at the rebase process)
+
+Basic exmaple:
+
+   ![Translation usage](readme_files/foreman_po_after.png)
+
+   to =>
+
+   ![Translation usage](readme_files/foreman_po_before.png)
 
 
-## How the translation dictionary works
+## Overrides: (Run-time dependency use)
 
-The translation process and packaging will work in the following way:
-1)run rake gettext:find this will generate regular en.po file.
+### CSS:
 
-example : msgid  "welcome to foreman"
-          msgstr ""
+Create a new file with the same name as the css you want to override. At the top of the new file add “@import <%= Rails.root %>/app/assets/stylesheets/*filename”.Then write your own css rules and it will override the core ones.
 
-2) "translate" the needed sentences(containing products names) using a rake create_english_dictionary (this rake task will switch the needed words and create a "dictionary").
+For example patternfly_and_overrides.scss override (changing the body width) :
 
-***this will be the final en.po file and will use us as a dictionary:
-example : msgid  "welcome to foreman"
-          msgstr "welcome to satellite"
+```sass
+@import "mixin";
+@import "colors";
+@import  "<%= Rails.root %>/app/assets/stylesheets/patternfly_and_overrides.scss";
 
+$navbar-default-bg: $primary_color;
 
-3) First switch, rake translate:before_translation this task will edit the new [language].po file and switch all the words needed(e.g foreman,smart-proxy etc).
-
-original [language].po: msgid  "welcome to foreman"
-                             msgstr ""
-
-turn to : msgid  "welcome to satellite"
-          msgstr ""
+body {
+  width: 100%;
+}
+```
 
 
-*this file will be sent for translation.
+### Images/logos:
 
-4) get the translated files and placing them inside locale.
-
-example(it) : msgid  "welcome to satellite"
-              msgstr "Benvenuto su satellite"
-
-5) Second switch, rake translation:after_translation this task will switch the the msgid with msgid of the en.po file by matching the msgid(edit.it.po file that we translated) to msgstr of the en.po.
+Add a file to the assets/images with the same name as the image you want to override.
 
 
-example(it) :  match it.po msgid with en.po msgstr and place en.po msgid instead.
+### Change-views/layouts:
 
-translated file(it)-  msgid  "welcome to satellite"   <=     en.po-  msgid  "welcome to foreman"
-                      msgstr "Benvenuto su satellite"    =>         msgstr "Benvenuto su satellite"
+Use [deface](https://github.com/spree/deface) in order to change views, all the deface changes are located under app/overrides.
 
-***the outcome file will be the it.po file:
-outcome(it.po):       msgid  "welcome to foreman"
-                      msgstr "Benvenuto su satellite"
+For example, adding the redhat logo to the login screen
+
+```ruby
+Deface::Override.new(:virtual_path  => "users/login",
+                     :name          => "add redhat logo",
+                     :insert_before => "div#login",
+                     :text          => "<span id='badge'><%= image_tag('Redhat-logo.png') %></span>")
+```
 
 
-The words switching will be made by a dictionary that could be configure easily.
+### Change controller/models behaviour:
 
-## Copyright
+Use [Monkey-patching](http://culttt.com/2015/06/17/what-is-monkey-patching-in-ruby/) in order to change functionality:
 
-Copyright (c) *year* *your name*
+* Create a moudle with the overrided method
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+```ruby
+module Openstack
+  extend ActiveSupport::Concern
+  included do
+    define_singleton_method :provider_friendly_name do
+      "RHEL OpenStack Platform"
+    end
+  end
+end
+```
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+* Include the model inside the engine.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+```ruby
+config.to_prepare do
+      Rails.application.config.sass.load_paths << "#{engine_peth}/app/assets/stylesheets"
+      assets_to_override = [
+                             "#{engine_peth}/app/assets/stylesheets",
+                             "#{engine_peth}/app/assets/images",
+                             "#{engine_peth}/app/assets/javascripts"]
+      assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
+      begin
+        # Include your monkey-patches over here
+        Foreman::Model::Openstack.send :include, Openstack
+      rescue => e
+        puts "ForemanThemeSatellite: skipping engine hook (#{e.to_s})"
+      end
+    end
+```
 
+### Helpers:
+
+Adding a helper function with the same name as in foreman core in application_helper will override it.
+
+Documentation override was made using this method
+
+### Documentation:
+
+Foreman's documentation is processed thorugh `documentation_url` fucntion,
+by overrding it from foreman_theme_satellite/app/helpers/theme_application_helper we change the documentation links.
+
+Connect each subject with the current links: (this is the entery point for documentation team)
+
+```ruby
+USER_GUIDE_DICTIONARY = {
+    "InstallationMedia" => "https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/User_Guide/sect-Installation_Media.html"
+    }
+```
+
+
+### Versioning:
+
+The versions are controlled by lib/foreman_theme_satellite/version.rb,
+
+```ruby
+module ForemanThemeSatellite
+  VERSION = "0.1"
+  #this file indicates the satellite version that will be represented on the login page.
+  SATELLITE_VERSION = "SATELLITE-6.1.0"
+  #this file indicates the satellite version that will be uesd on links to documentation.
+  SATELLITE_SHORT_VERSION = "6.0"
+end
+```
+
+### Tests:
+
+Dou to all the changes the plugin makes it is possible that some of the core tests will fail,
+we solve that by skipping the test and replacing it with our own.
+
+Skipping :
+
+```ruby
+initializer 'foreman_theme_satellite.register_plugin', :after=> :finisher_hook do |app|
+      Foreman::Plugin.register :foreman_theme_satellite do
+        requires_foreman '>= 1.10'
+         tests_to_skip ({
+                        "ComputeResourceTest" => ["friendly provider name"]
+                        })
+end
+```
+
+Replacing :
+
+```ruby
+class ModelsTest < ActiveSupport::TestCase
+
+  test "check openstack friendly name" do
+    assert_equal Foreman::Model::Openstack::provider_friendly_name, "RHEL OpenStack Platform", "Friendly name override was unsuccessful"
+  end
+
+end
+```
+
+
+
+## Rebase process: (Internal-tool use)
+1. download all the upstream projects + branding plugin(place them in the same dir).
+2. place the branding plugin in foreman’s gem file.
+           * gem ‘foreman_theme_satellite’, path => ‘path_to_plugin’
+3. edit the plugins.yml (located at foreman_theme_satellite/lib/plugins.yml) with the needed paths(in case all the projects are located in the same directory just place “” and it will auto load them) and version.
+4. run `rake match_po` from the foreman directory.
+5. send po files for translations.
+6. once translations are back, merge them to each project(this might be a good point to upload them for upstream use).
+7. run `rake after_translation` from the foreman directory.
+8. upload all the projects to a new gitlab under the new version branch.
+
+**Editing the plugin.yaml**
+
+```yaml
+#previous_version is the version should state last version of satellite.
+:previous_version: "SATELLITE-6.1.0"
+:plugins:
+  foreman: ""
+  #this will look for the project in ../
+  hammer-cli: ""
+  #this will look for the project in that path
+  foreman_docker: "../example/foreman-docker"
+
+```
+
+![Translation usage](readme_files/foreman_package.png)
+
+
+## Benefits of the new branding:
+* Creating a downstream version **can now be automated**.
+* Same code base for all upstream/downstream projects, **only difference is in locales**.
+* Foreman_theme_plugin is the **only place** to insert bradning changes from upstream to downstream.
+* Downstream translators are **working on upstream translations**, we can upload them for upstream use, translations will be easy to merge.
+
+
+## Check and experiment
+* git clone git@gitlab.sat.lab.tlv.redhat.com:satellite6/foreman_theme_satellite.git
+* add this plugin as a gem in your foreman gemfile.
+* to get the rails server to have satellite_branded strings, run `rake after_translation`

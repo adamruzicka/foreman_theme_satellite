@@ -13,23 +13,22 @@ Deface::Override.new(:virtual_path  => "users/login",
                      :insert_before => "div#login",
                      :text          => "<span id='badge'><%= image_tag('Redhat-logo.png') %></span>")
 
-Deface::Override.new(:virtual_path  => "templates/_form",
-                     :name          => "change url of provioning templates",
-                     :replace       => "div.alert-success:first-child",
-                     :text          =>  "<%= alert :class => 'alert-success', :header => '',
-                                        :text  => icon_text(\"info-sign\", (_('Note: %s ') % link_to(_('Useful template functions and macros'),
-                                         type == 'ptable' ? \"https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/#{SETTINGS[:version].short}/html/User_Guide/sect-Partition_Tables.html\" : \"'https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/#{SETTINGS[:version].short}/html/User_Guide/sect-Provisioning_Templates.html\",
-                                         :rel => 'external', :id => type+\"_doc_url\")).html_safe) %>")
+Deface::Override.new(:virtual_path  => "users/login",
+                     :name          => "change version for login page",
+                     # p#version
+                     :replace       => "div.details p:last",
+                     :text          => '<p><%= _("Version %{version}") % {:version => ForemanThemeSatellite::SATELLITE_VERSION} %></p>')
 
 Deface::Override.new(:virtual_path  => "about/index",
                      :name          => "change about page content",
+                     # div#support
                      :replace       => "div.col-md-5 div.stats-well:nth-child(1)",
                      :text          =>  "    <div class=\"stats-well\"><h4><%= _(\"Support\") %></h4> <p>Visit the <%= link_to _('Customer Portal'), \"https://access.redhat.com/\",
                                        :rel => \"external\" %> to get support, find solutions to common questions, and more.</p><h6><%= _(\"Documentation\") %></h6>
                                         <ul>
-                                        <li><%= link_to _('User Guide'),\"https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/#{SETTINGS[:version].short}/html/User_Guide/index.html\", :rel => \"external\" %></li>
-                                        <li><%= link_to _('Transition Guide'),\"https://access.redhat.com/site/documentation/en-US/Red_Hat_Satellite/#{SETTINGS[:version].short}/html/Transition_Guide/index.html\", :rel => \"external\" %></li>
-                                                                            <li><%= link_to _(\"API Guide\"), \"https://access.redhat.com/site/documentation/en-US/Red_Hat_Satellite/#{SETTINGS[:version].short}/html/API_Guide/index.html\", :rel => \"external\" %></li>
+                                        <li><%= link_to _('User Guide'),\"https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/User_Guide/index.html\", :rel => \"external\" %></li>
+                                        <li><%= link_to _('Transition Guide'),\"https://access.redhat.com/site/documentation/en-US/Red_Hat_Satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/Transition_Guide/index.html\", :rel => \"external\" %></li>
+                                                                            <li><%= link_to _(\"API Guide\"), \"https://access.redhat.com/site/documentation/en-US/Red_Hat_Satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/API_Guide/index.html\", :rel => \"external\" %></li>
                                         </ul>
                                         <h6><%= _(\"Blog\") %></h6>
                                         <ul>
@@ -39,24 +38,14 @@ Deface::Override.new(:virtual_path  => "about/index",
                                         <p><%= (_(\"You can find us on %{freenode} (irc.freenode.net) on #satellite6.\") % {:freenode => link_to(\"freenode\", \"http://www.freenode.net\", :rel => \"external\")}).html_safe  %></p>
                                         </div>")
 
-Deface::Override.new(:virtual_path  => "environments/welcome",
-                     :name          => "change environments help url",
-                     :replace       => "p a",
-                     :text          => "<a href=\"https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/#{SETTINGS[:version].short}/html/User_Guide/Importing_Parameterized_Classes_from_a_Puppet_Master.html\" rel=\"external\"><%= _('Puppet classes and environment importer') %></a>")
+Deface::Override.new(:virtual_path  => "about/index",
+                     :name          => "change version for about page",
+                     :replace       => "p#copyright-p",
+                     :text          => '<p id="copyright-p"><%= (_("Version %{version}  © 2009-%{year} Paul Kelly and %{author}") % {:version => ForemanThemeSatellite::VERSION, :year=>DateTime.now.year, :author=>link_to("Ohad Levy", "mailto:ohadlevy@gmail.com" )}).html_safe %></p>')
 
 Deface::Override.new(:virtual_path  => "common/500",
                      :name          => "change 500 page content",
-                     :replace       => "div:nth-child(1)",
-                     :text          => "")
-
-Deface::Override.new(:virtual_path  => "common/500",
-                     :name          => "change 500 page content",
-                     :replace       => "div:nth-child(2)",
-                     :text          => "<div id=\"backtrace\" class=\"alert alert-block alert-danger base in fade hide\">\r\n  <em><%= exception.class %><\/em><br>\r\n  <strong><%= exception.message %><\/strong><br>\r\n
-                                       <%= Rails.backtrace_cleaner.clean(exception.backtrace).join(\"<br>\").html_safe %>\r\n<\/div>")
-
-Deface::Override.new(:virtual_path  => "common/500",
-                     :name          => "change 500 page content",
+                     # p#message
                      :replace       => "p",
                      :text          => "<p>\r\n  <%= _(\"If you feel this is an error with Satellite 6 itself, please open a new issue with\") %> <%= link_to _(\"Satellite ticketing system\"), \"https:\/\/access.redhat.com\/home\",
                                        :rel => \"external\" %>,\r\n  <%= _(\"You would probably need to attach the\") %>\r\n  <%= link_to_function(_(\"Full trace\"), \"$(\'#backtrace\').toggle()\")%> <%= _(\"and relevant log entries.\") %>\r\n<\/p>")
