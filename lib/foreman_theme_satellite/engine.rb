@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'deface'
-require 'get_pomo'
 
 module ForemanThemeSatellite
 
@@ -37,10 +36,15 @@ module ForemanThemeSatellite
     # content twice.
     assets_to_precompile =
         Dir.chdir(root) do
-          Dir['app/assets/javascripts/**/*', 'app/assets/stylesheets/**/*'].map do |f|
+          Dir['app/assets/stylesheets/**/*', 'app/assets/images/**/*'].map do |f|
             f.split(File::SEPARATOR, 4).last
           end
         end
+
+    initializer 'foreman_theme_satellite.configure_assets', group: :assets do
+      SETTINGS[:foreman_theme_satellite] = { assets: { precompile: assets_to_precompile } }
+    end
+
     initializer 'foreman_theme_satellite.assets.precompile' do |app|
        app.config.assets.precompile += assets_to_precompile
     end
@@ -50,8 +54,7 @@ module ForemanThemeSatellite
       Rails.application.config.sass.load_paths << "#{engine_peth}/app/assets/stylesheets"
       assets_to_override = [
                              "#{engine_peth}/app/assets/stylesheets",
-                             "#{engine_peth}/app/assets/images",
-                             "#{engine_peth}/app/assets/javascripts"]
+                             "#{engine_peth}/app/assets/images"]
       assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
       begin
         # Include your monkey-patches over here

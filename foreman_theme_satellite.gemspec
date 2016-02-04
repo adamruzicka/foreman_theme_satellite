@@ -14,6 +14,5 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,locale}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
   s.add_dependency "deface"
-  s.add_dependency "get_pomo"
   s.add_dependency "activesupport"
 end
