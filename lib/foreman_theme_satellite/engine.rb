@@ -51,11 +51,13 @@ module ForemanThemeSatellite
 
     #Include concerns in this config.to_prepare block
     config.to_prepare do
-      Rails.application.config.sass.load_paths << "#{engine_peth}/app/assets/stylesheets"
-      assets_to_override = [
-                             "#{engine_peth}/app/assets/stylesheets",
-                             "#{engine_peth}/app/assets/images"]
-      assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
+      if defined?(Sass)
+        Rails.application.config.sass.load_paths << "#{engine_peth}/app/assets/stylesheets"
+        assets_to_override = [
+                               "#{engine_peth}/app/assets/stylesheets",
+                               "#{engine_peth}/app/assets/images"]
+        assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
+      end
       begin
         # Include your monkey-patches over here
         Foreman::Model::Openstack.send :include, Openstack
