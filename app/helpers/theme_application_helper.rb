@@ -22,7 +22,7 @@ module ThemeApplicationHelper
     "SmartProxies" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/installation-guide/#chap-Red_Hat_Satellite-Installation_Guide-Installing_Capsule_Server",
     "ConfigurationOptions" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/user-guide/#sect-Red_Hat_Satellite-User_Guide-Red_Hat_Satellite_Server_6_Basic_Configuration_Workflow",
     "Classes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/user-guide/#sect-Red_Hat_Satellite-User_Guide-Importing_Parameterized_Classes_from_a_Puppet_Master",
-    "Envornments" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/user-guide/#chap-Red_Hat_Satellite-User_Guide-Configuring_the_Provisioning_Environment"
+    "Environments" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/user-guide/#chap-Red_Hat_Satellite-User_Guide-Configuring_the_Provisioning_Environment"
   }
 
   def association_text()
