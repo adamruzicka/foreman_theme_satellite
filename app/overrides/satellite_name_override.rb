@@ -19,6 +19,12 @@ Deface::Override.new(:virtual_path  => "users/login",
                      :replace       => "div.details p:last",
                      :text          => '<p><%= _("Version %{version}") % {:version => ForemanThemeSatellite::SATELLITE_VERSION} %></p>')
 
+Deface::Override.new(:virtual_path  => "users/login",
+                     :name          => "change welcome message for login page",
+                     # p#welcome
+                     :replace       => "div.details p:first",
+                     :text          => '<p><%= _("Welcome to Satellite")%></p>')
+
 Deface::Override.new(:virtual_path  => "about/index",
                      :name          => "change about page content",
                      # div#support
