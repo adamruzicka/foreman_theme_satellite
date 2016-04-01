@@ -64,7 +64,7 @@ end
 def validate_en_locale_exist(file)
   plugin_list = []
   file[:plugins].each do |plugin_name, val|
-    val = DIR_PATH + plugin_name if val.empty?
+    val = DIR_PATH + plugin_name
     plugin_list << plugin_name unless File.exist?(val + "/locale/en/" + plugin_name + ".po")
 
   end
@@ -244,4 +244,3 @@ task :after_translation => :environment do
     puts("*Finished modifing " + plugin_name)
   end
 end
-
