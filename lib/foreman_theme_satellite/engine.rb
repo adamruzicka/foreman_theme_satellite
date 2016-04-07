@@ -31,6 +31,12 @@ module ForemanThemeSatellite
       end
     end
 
+    initializer 'foreman_theme_satellite.load_app_instance_data' do |app|
+      ForemanThemeSatellite::Engine.paths['db/migrate'].existent.each do |path|
+        app.config.paths['db/migrate'] << path
+      end
+    end
+
     # Precompile any JS or CSS files under app/assets/
     # If requiring files from each other, list them explicitly here to avoid precompiling the same
     # content twice.
