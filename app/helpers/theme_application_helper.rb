@@ -43,7 +43,7 @@ module ThemeApplicationHelper
     (_("The final entry, Operating System default, can be set by editing the %s page.") % (link_to _("Operating System"), operatingsystems_path)).html_safe
   end
 
-  def documentation_url(section = nil)
+  def documentation_url(section = nil, _ = {})
     url = ""
     # this version string can be changed if needed.
     unless section.nil?
