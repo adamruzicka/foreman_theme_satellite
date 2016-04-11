@@ -47,7 +47,7 @@ Deface::Override.new(:virtual_path  => "about/index",
 Deface::Override.new(:virtual_path  => "about/index",
                      :name          => "change version for about page",
                      :replace       => "p#copyright-p",
-                     :text          => '<p id="copyright-p"><%= (_("Version %{version}  © 2009-%{year} Paul Kelly and %{author}") % {:version => ForemanThemeSatellite::VERSION, :year=>DateTime.now.year, :author=>link_to("Ohad Levy", "mailto:ohadlevy@gmail.com" )}).html_safe %></p>')
+                     :text          => '<p id="copyright-p"><%= (_("Version %{version}  © 2009-%{year} Paul Kelly and %{author}") % {:version => ForemanThemeSatellite::SATELLITE_VERSION, :year=>DateTime.now.year, :author=>link_to("Ohad Levy", "mailto:ohadlevy@gmail.com" )}).html_safe %></p>')
 
 Deface::Override.new(:virtual_path  => "common/500",
                      :name          => "change 500 page content",
