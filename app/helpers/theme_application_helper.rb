@@ -1,6 +1,8 @@
 module ThemeApplicationHelper
 
   USER_GUIDE_DICTIONARY = {
+    "ExecutingaJob" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Host_Configuration_Guide-Executing_Remote_Jobs",
+    "JobTemplates" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Host_Configuration_Guide-Setting_up_Job_Templates",
     "FactsandtheENC" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
     "Architectures" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
     "Provisioning" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
