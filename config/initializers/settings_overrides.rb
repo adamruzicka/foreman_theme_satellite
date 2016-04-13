@@ -1,6 +1,6 @@
 # The class must be executed after Setting::General finished.
 # Best way to achieve that is to inherit from the class
-class Setting::ForemanThemeSatellite < Setting::General
+class GeneralSetting < ::Setting::General
   def self.load_defaults
     # Check the table exists
     return unless super
