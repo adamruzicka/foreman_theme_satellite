@@ -52,7 +52,7 @@ module ForemanThemeSatellite
     end
 
     initializer 'foreman_theme_satellite.assets.precompile' do |app|
-       app.config.assets.precompile += assets_to_precompile
+      app.config.assets.precompile += assets_to_precompile
     end
 
     initializer 'foreman_theme_satellite.katello.load_default_settings', before: :load_config_initializers, after: 'katello.load_default_settings' do |app|
@@ -62,10 +62,9 @@ module ForemanThemeSatellite
     #Include concerns in this config.to_prepare block
     config.to_prepare do
       if defined?(Sass)
+        Rails.application.config.assets.precompile += %w( theme.css )
         Rails.application.config.sass.load_paths << "#{engine_peth}/app/assets/stylesheets"
-        assets_to_override = [
-                               "#{engine_peth}/app/assets/stylesheets",
-                               "#{engine_peth}/app/assets/images"]
+        assets_to_override = ["#{engine_peth}/app/assets/images"]
         assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
       end
       begin
