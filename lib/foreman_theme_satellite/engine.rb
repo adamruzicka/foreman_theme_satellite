@@ -59,6 +59,13 @@ module ForemanThemeSatellite
       require_dependency File.expand_path("../../../app/models/setting/katello_setting.rb", __FILE__)
     end
 
+    initializer 'foreman_theme_satellite.gettext.branding', :after=> :finisher_hook do |app|
+      require File.expand_path('../replacer_repository', __FILE__)
+      FastGettext.translation_repositories.each do |key, repo|
+        FastGettext.translation_repositories[key] = ::ForemanThemeSatellite::ReplacerRepository.new(repo)
+      end
+    end
+
     #Include concerns in this config.to_prepare block
     config.to_prepare do
       if defined?(Sass)
