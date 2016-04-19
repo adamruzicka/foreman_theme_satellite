@@ -15,9 +15,11 @@ class KatelloSetting < Setting
     }
 
     transaction do
-      settings_to_override.each do |setting, default|
-        setting = Setting.where(:name => setting).first
-        setting.update_attribute(:default, default)
+      if defined?(Katello)
+        settings_to_override.each do |setting, default|
+          setting = Setting.where(:name => setting).first
+          setting.update_attribute(:default, default)
+        end
       end
     end
 
