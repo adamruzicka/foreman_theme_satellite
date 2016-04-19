@@ -55,6 +55,10 @@ module ForemanThemeSatellite
        app.config.assets.precompile += assets_to_precompile
     end
 
+    initializer 'foreman_theme_satellite.katello.load_default_settings', before: :load_config_initializers, after: 'katello.load_default_settings' do |app|
+      require_dependency File.expand_path("../../../app/models/setting/katello_setting.rb", __FILE__)
+    end
+
     #Include concerns in this config.to_prepare block
     config.to_prepare do
       if defined?(Sass)
