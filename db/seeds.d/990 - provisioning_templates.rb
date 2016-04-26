@@ -48,7 +48,7 @@ upstream_templates = [
   'Kickstart default'
 ]
 ProvisioningTemplate.where(:name => upstream_templates).each do |template|
-  template.delete if template.template_combinations.count == 0 && template.operatingsystems.count == 0 && template.os_default_templates.count == 0
+  template.destroy if template.template_combinations.count == 0 && template.operatingsystems.count == 0 && template.os_default_templates.count == 0
 end
 
 ::User.current = nil
