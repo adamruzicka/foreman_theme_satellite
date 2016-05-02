@@ -49,6 +49,11 @@ Deface::Override.new(:virtual_path  => "about/index",
                      :replace       => "p#copyright-p",
                      :text          => '<p id="copyright-p"><%= (_("Version %{version}  © 2009-%{year} Paul Kelly and %{author}") % {:version => ForemanThemeSatellite::SATELLITE_VERSION, :year=>DateTime.now.year, :author=>link_to("Ohad Levy", "mailto:ohadlevy@gmail.com" )}).html_safe %></p>')
 
+Deface::Override.new(:virtual_path  => "about/index",
+                     :name          => "remove links to upstream plugins",
+                     :replace       => "#plugins table tbody tr td:first-of-type",
+                     :text          => '<td><%= plugin.name %></td>')
+
 Deface::Override.new(:virtual_path  => "common/500",
                      :name          => "change 500 page content",
                      # p#message
