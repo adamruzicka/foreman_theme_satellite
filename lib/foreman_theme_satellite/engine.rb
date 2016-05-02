@@ -42,7 +42,7 @@ module ForemanThemeSatellite
     # content twice.
     assets_to_precompile =
         Dir.chdir(root) do
-          Dir['app/assets/stylesheets/**/*', 'app/assets/images/**/*'].map do |f|
+          Dir['app/assets/stylesheets/**/*', 'app/assets/images/**/*', 'app/assets/javascripts/**/*'].map do |f|
             f.split(File::SEPARATOR, 4).last
           end
         end
