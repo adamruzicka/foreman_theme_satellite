@@ -2,7 +2,7 @@ require 'test_plugin_helper'
 
 class SmartProxyOverrideIntegrationTest < ActionDispatch::IntegrationTest
   test "index page" do
-    assert_index_page(smart_proxies_path, "capsules", "New Capsule", false)
+    assert_index_page(smart_proxies_path, "Capsules", "New Capsule", false)
   end
 
   test "create new page" do
@@ -11,6 +11,6 @@ class SmartProxyOverrideIntegrationTest < ActionDispatch::IntegrationTest
     fill_in "smart_proxy_url", :with => "http://dns.example.com"
     assert_submit_button(smart_proxies_path)
     assert page.has_link? "DNS Worldwide"
-    assert page.has_content? "http://dns.example.com"
+    assert_selector "a[title='http://dns.example.com']"
   end
 end
