@@ -45,13 +45,14 @@ module ForemanThemeSatellite
 
     def [](key)
       original = @repo[key]
-      val = original || key
+      return original unless original.is_a?(String)
 
-      replaced = nil
+      replaced = original
       FOREMAN_BRAND.each do |foreman_word, value|
-        replaced ||= val.gsub!(foreman_word, value)
+        replaced = replaced.gsub(foreman_word, value)
       end
-      replaced ? val : original
+
+      replaced
     end
 
     def plural(*keys)
