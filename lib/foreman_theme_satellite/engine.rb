@@ -2,7 +2,6 @@ require 'rubygems'
 require 'deface'
 
 module ForemanThemeSatellite
-
   class Engine < ::Rails::Engine
     engine_name 'foreman_theme_satellite'
     config.autoload_paths += Dir["#{config.root}/app/overrides"]
@@ -10,6 +9,15 @@ module ForemanThemeSatellite
     config.autoload_paths += Dir["#{config.root}/app/helpers"]
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
     engine_peth = config.root
+
+    assets_to_override = ["#{engine_peth}/app/assets/images"]
+
+    if ENV['ENABLE_PRY_RACK'] == 'true'
+      require File.expand_path("../pry_rack.rb", __FILE__)
+      config.app_middleware.insert_before(::ActionDispatch::Static, PryRack)
+    end
+
+    config.app_middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{config.root}/public")
 
     initializer 'foreman_theme_satellite.register_plugin', :after=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_theme_satellite do
@@ -49,6 +57,7 @@ module ForemanThemeSatellite
 
     initializer 'foreman_theme_satellite.configure_assets', group: :assets do
       SETTINGS[:foreman_theme_satellite] = { assets: { precompile: assets_to_precompile } }
+      assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
     end
 
     initializer 'foreman_theme_satellite.assets.precompile' do |app|
@@ -71,7 +80,6 @@ module ForemanThemeSatellite
       if defined?(Sass)
         Rails.application.config.assets.precompile += %w( theme.css )
         Rails.application.config.sass.load_paths << "#{engine_peth}/app/assets/stylesheets"
-        assets_to_override = ["#{engine_peth}/app/assets/images"]
         assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
       end
       begin
