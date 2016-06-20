@@ -19,6 +19,10 @@ module ForemanThemeSatellite
 
     config.app_middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{config.root}/public")
 
+    initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
+      Setting.send :include, SettingsBranding
+    end
+
     initializer 'foreman_theme_satellite.register_plugin', :after=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_theme_satellite do
         requires_foreman '>= 1.10'
@@ -64,10 +68,6 @@ module ForemanThemeSatellite
       app.config.assets.precompile += assets_to_precompile
     end
 
-    initializer 'foreman_theme_satellite.katello.load_default_settings', before: :load_config_initializers, after: 'katello.load_default_settings' do |app|
-      require_dependency File.expand_path("../../../app/models/setting/katello_setting.rb", __FILE__)
-    end
-
     initializer 'foreman_theme_satellite.gettext.branding', :after=> :finisher_hook do |app|
       require File.expand_path('../replacer_repository', __FILE__)
       FastGettext.translation_repositories.each do |key, repo|
@@ -87,6 +87,7 @@ module ForemanThemeSatellite
         Foreman::Model::Openstack.send :include, Openstack
         Foreman::Model::Ovirt.send :include, Ovirt
         Realm.send :include, RealmTheme
+        Setting.send :include, SettingsBranding
       rescue => e
         puts "ForemanThemeSatellite: skipping engine hook (#{e.to_s})"
       end
