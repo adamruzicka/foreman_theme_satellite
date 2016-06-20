@@ -45,9 +45,14 @@ Deface::Override.new(:virtual_path  => "about/index",
                                         </div>")
 
 Deface::Override.new(:virtual_path  => "about/index",
-                     :name          => "change version for about page",
+                     :name          => "add satellite version for about page",
+                     :insert_before => "p#copyright-p",
+                     :text          => '<p id="sat-copyright-p">Red Hat Satellite<br/><%= (_("Version %{version} © %{year} Red Hat Inc.") % {:version => ForemanThemeSatellite::SATELLITE_SHORT_VERSION, :year=>DateTime.now.year}).html_safe %></p>')
+
+Deface::Override.new(:virtual_path  => "about/index",
+                     :name          => "change version text for about page",
                      :replace       => "p#copyright-p",
-                     :text          => '<p id="copyright-p"><%= (_("Version %{version}  © 2009-%{year} Paul Kelly and %{author}") % {:version => ForemanThemeSatellite::SATELLITE_VERSION, :year=>DateTime.now.year, :author=>link_to("Ohad Levy", "mailto:ohadlevy@gmail.com" )}).html_safe %></p>')
+                     :text          => '<p id="copyright-p"><%= (_("Includes %{system} © 2009-%{year} Paul Kelly and Ohad Levy") % {:system => "Foreman", :year => DateTime.now.year}).html_safe %></p>')
 
 Deface::Override.new(:virtual_path  => "about/index",
                      :name          => "remove links to upstream plugins",
