@@ -35,12 +35,10 @@ echo "updating system time"
 /usr/sbin/ntpdate -sub <%= @host.params['ntp-server'] || '0.fedora.pool.ntp.org' %>
 /usr/sbin/hwclock --systohc
 
-<% if @host.info['parameters']['realm'] && @host.realm && @host.realm.realm_type == 'Red Hat Identity Management' -%>
-<%= snippet "idm_register" %>
-<% end -%>
-
 # update all the base packages from the updates repository
 yum -t -y -e 0 update
+
+<%= snippet('remote_execution_ssh_keys') %>
 
 <% if salt_enabled %>
 yum -t -y -e 0 install salt-minion
@@ -59,8 +57,6 @@ echo "Configuring puppet"
 cat > /etc/puppet/puppet.conf << EOF
 <%= snippet 'puppet.conf' %>
 EOF
-
-<%= snippet('remote_execution_ssh_keys') %>
 
 # Setup puppet to run on system reboot
 /sbin/chkconfig --level 345 puppet on
