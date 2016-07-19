@@ -1,36 +1,36 @@
 module ThemeApplicationHelper
 
   USER_GUIDE_DICTIONARY = {
-    "ExecutingaJob" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Host_Configuration_Guide-Executing_Remote_Jobs",
-    "JobTemplates" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Host_Configuration_Guide-Setting_up_Job_Templates",
-    "FactsandtheENC" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
-    "Architectures" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
-    "Provisioning" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
-    "PuppetReports" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
-    "Realm" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
-    "Searching" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
-    "InstallationMedia" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Installation_Media",
-    "ParameterizedClasses" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_the_Provisioning_Environment-Parameters",
-    "PartitionTables" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Partition_Tables",
-    "ProvisioningTemplates" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Provisioning_Templates",
-    "OperatingSystems" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Operating_Systems",
-    "RolesandPermissions" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/server-administration-guide/#chap-Red_Hat_Satellite-Server_Administration_Guide-Users_and_Roles",
-    "Parameters" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_the_Provisioning_Environment-Parameters",
-    "GettingHelp" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/transition-guide/#chap-Red_Hat_Satellite-Transition_Guide-Introduction_to_Red_Hat_Satellite",
-    "LDAPAuthentication" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/server-administration-guide/#sect-Red_Hat_Satellite-Server_Administration_Guide-Creating_User_Groups-Configuring_External_User_Groups",
-    "VMwareNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
-    "RackspaceNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
-    "RHEVNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
-    "OpenStackNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
-    "LibvirtNote" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
-    "EC2" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
-    "GoogleComputeEngineNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
-    "ComputeResources" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
-    "SmartProxies" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/installation-guide/#chap-Red_Hat_Satellite-Installation_Guide-Installing_Capsule_Server",
-    "SmartVariables" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Smart_Parameters",
-    "ConfigurationOptions" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/",
-    "Classes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Importing_Parameterized_Classes_from_a_Puppet_Master",
-    "Environments" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}-beta/host-configuration-guide/#chap-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_the_Provisioning_Environment"
+    "ExecutingaJob" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Host_Configuration_Guide-Executing_Remote_Jobs",
+    "JobTemplates" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Host_Configuration_Guide-Setting_up_Job_Templates",
+    "FactsandtheENC" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/",
+    "Architectures" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Architectures",
+    "Provisioning" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/provisioning-guide/",
+    "PuppetReports" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/",
+    "Realm" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/",
+    "Searching" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/",
+    "InstallationMedia" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Installation_Media",
+    "ParameterizedClasses" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_the_Provisioning_Environment-Parameters",
+    "PartitionTables" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Partition_Tables",
+    "ProvisioningTemplates" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/provisioning-guide/#Configuring_Provisioning_Resources-Creating_Provisioning_Templates",
+    "OperatingSystems" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Operating_Systems",
+    "RolesandPermissions" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/server-administration-guide/#chap-Red_Hat_Satellite-Server_Administration_Guide-Users_and_Roles",
+    "Parameters" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_the_Provisioning_Environment-Parameters",
+    "GettingHelp" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/transition-guide/#chap-Red_Hat_Satellite-Transition_Guide-Introduction_to_Red_Hat_Satellite",
+    "LDAPAuthentication" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/server-administration-guide/#sect-Red_Hat_Satellite-Server_Administration_Guide-Creating_User_Groups-Configuring_External_User_Groups",
+    "VMwareNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/provisioning-guide/#Provisioning_Virtual_Machines_in_VMware_vSphere",
+    "RackspaceNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
+    "RHEVNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/provisioning-guide/#Provisioning_Virtual_Machines_in_Red_Hat_Enterprise_Virtualization",
+    "OpenStackNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/provisioning-guide/#Provisioning_Cloud_Instances_in_Red_Hat_OpenStack_Platform",
+    "LibvirtNote" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/provisioning-guide/#Provisioning_Virtual_Machines_in_KVM",
+    "EC2" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/provisioning-guide/#Provisioning_Cloud_Instances_in_Amazon_EC2",
+    "GoogleComputeEngineNotes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
+    "ComputeResources" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Provisioning_Settings-Compute_Resources",
+    "SmartProxies" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/installation-guide/#installing_capsule_server",
+    "SmartVariables" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Smart_Variables",
+    "ConfigurationOptions" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/",
+    "Classes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Importing_Parameterized_Classes_from_a_Puppet_Master",
+    "Environments" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/"
   }
 
   def association_text()
@@ -54,7 +54,7 @@ module ThemeApplicationHelper
       end
     end
     if url.empty?
-      url = "https://access.redhat.com/documentation/en/red-hat-satellite/version-6.2-beta/host-configuration-guide/"
+      url = "https://access.redhat.com/documentation/en/red-hat-satellite/version-6.2/host-configuration-guide/"
     end
     url
   end
