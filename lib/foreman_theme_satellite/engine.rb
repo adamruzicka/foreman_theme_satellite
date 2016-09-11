@@ -23,7 +23,7 @@ module ForemanThemeSatellite
       Setting.send :include, SettingsBranding
     end
 
-    initializer 'foreman_theme_satellite.register_plugin', :after=> :finisher_hook do |app|
+    initializer 'foreman_theme_satellite.register_plugin', :before => :finisher_hook do |app|
       Foreman::Plugin.register :foreman_theme_satellite do
         requires_foreman '>= 1.10'
          tests_to_skip ({
@@ -68,7 +68,7 @@ module ForemanThemeSatellite
       app.config.assets.precompile += assets_to_precompile
     end
 
-    initializer 'foreman_theme_satellite.gettext.branding', :after=> :finisher_hook do |app|
+    initializer 'foreman_theme_satellite.gettext.branding', :before=> :finisher_hook do |app|
       require File.expand_path('../replacer_repository', __FILE__)
       FastGettext.translation_repositories.each do |key, repo|
         FastGettext.translation_repositories[key] = ::ForemanThemeSatellite::ReplacerRepository.new(repo)
