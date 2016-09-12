@@ -1,7 +1,7 @@
 module ForemanThemeSatellite
-  VERSION = "0.1.27"
+  VERSION = "1.0.0"
   #this file indicates the satellite version that will be represented on the login page.
-  SATELLITE_VERSION = "Satellite 6.2.1"
+  SATELLITE_VERSION = "Satellite 6.3.0"
   #this file indicates the satellite version that will be uesd on links to documentation.
-  SATELLITE_SHORT_VERSION = "6.2"
+  SATELLITE_SHORT_VERSION = "6.3"
 end
