@@ -1,6 +1,5 @@
 # Add in the localizatione below to make sure they are extracted.
 N_("Version %{version}")
-N_("Welcome to Satellite")
 N_("Support")
 N_("Customer portal")
 N_("Documentation")
@@ -46,12 +45,6 @@ Deface::Override.new(:virtual_path  => "users/login",
                      # p#version
                      :replace       => "div.details p#version",
                      :text          => '<p id="version"><%= _("Version %{version}") % {:version => ForemanThemeSatellite::SATELLITE_VERSION} %></p>')
-
-Deface::Override.new(:virtual_path  => "users/login",
-                     :name          => "change welcome message for login page",
-                     # p#welcome
-                     :replace       => "div.details p:first",
-                     :text          => '<p><%= _("Welcome to Satellite")%></p>')
 
 Deface::Override.new(:virtual_path  => "about/index",
                      :name          => "change about page content",
