@@ -8,3 +8,9 @@ test/dummy/.sass-cache
 locale/*.mo
 locale/*/*.pox
 .idea
+Gemfile.lock
+locale/*.mo
+locale/*/*.edit.po
+locale/*/*.po.time_stamp
+locale/*/*.pox
+

@@ -1,3 +1,5 @@
+require 'fast_gettext'
+require 'gettext_i18n_rails'
 require 'rubygems'
 require 'deface'
 
@@ -23,7 +25,15 @@ module ForemanThemeSatellite
       Setting.send :include, SettingsBranding
     end
 
-    initializer 'foreman_theme_satellite.register_plugin', :before => :finisher_hook do |app|
+
+    initializer 'foreman_theme_satellite.register_gettext', :after => :load_config_initializers do
+      locale_dir = File.join(File.expand_path('../../..', __FILE__), 'locale')
+      locale_domain = 'foreman_theme_satellite'
+
+      Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
+    end
+
+    initializer 'foreman_theme_satellite.register_plugin', :before=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_theme_satellite do
         requires_foreman '>= 1.10'
          tests_to_skip ({

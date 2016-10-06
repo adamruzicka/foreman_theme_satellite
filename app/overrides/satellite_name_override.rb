@@ -1,3 +1,25 @@
+# Add in the localizatione below to make sure they are extracted.
+N_("Version %{version}")
+N_("Welcome to Satellite")
+N_("Support")
+N_("Customer portal")
+N_("Documentation")
+N_('User Guide')
+N_('Transition Guide')
+N_("API Guide")
+N_("Blog")
+N_('Red Hat Satellite Blog')
+N_("IRC")
+N_("You can find us on %{freenode} (irc.freenode.net) on #satellite6.")
+N_("Version %{version} © %{year} Red Hat Inc.")
+N_("Includes %{system} © 2009-%{year} Paul Kelly and Ohad Levy")
+N_("If you feel this is an error with Satellite 6 itself, please open a new issue with")
+N_("Satellite ticketing system")
+N_("You would probably need to attach the")
+N_("Full trace")
+N_("and relevant log entries.")
+
+
 Deface::Override.new(:virtual_path  => "home/_topbar",
                      :name          => "remove foreman name from topbar",
                      :replace       => "erb[loud]:contains('link_to')",

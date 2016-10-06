@@ -2,12 +2,10 @@
 #
 # This file is distributed under the same license as foreman_theme_satellite.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: version 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-20 08:46+0100\n"
 "PO-Revision-Date: 2014-08-20 08:54+0100\n"
 "Last-Translator: Foreman Team <foreman-dev@googlegroups.com>\n"
 "Language-Team: Foreman Team <foreman-dev@googlegroups.com>\n"
@@ -17,3 +15,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "API Guide"
+msgstr ""
+
+msgid "Blog"
+msgstr ""
+
+msgid "Customer portal"
+msgstr ""
+
+msgid "Documentation"
+msgstr ""
+
+msgid "Environment only"
+msgstr ""
+
+msgid "Full trace"
+msgstr ""
+
+msgid "Host group and Environment"
+msgstr ""
+
+msgid "Host group only"
+msgstr ""
+
+msgid "IRC"
+msgstr ""
+
+msgid "If you feel this is an error with Satellite 6 itself, please open a new issue with"
+msgstr ""
+
+msgid "Includes %{system} © 2009-%{year} Paul Kelly and Ohad Levy"
+msgstr ""
+
+msgid "Operating System"
+msgstr ""
+
+msgid "Operating system default"
+msgstr ""
+
+msgid "Red Hat Satellite Blog"
+msgstr ""
+
+msgid "Satellite ticketing system"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "The final entry, Operating System default, can be set by editing the %s page."
+msgstr ""
+
+msgid "Theme changes for Satellite 6."
+msgstr ""
+
+msgid "Transition Guide"
+msgstr ""
+
+msgid "User Guide"
+msgstr ""
+
+msgid "Version %{version}"
+msgstr ""
+
+msgid "Version %{version} © %{year} Red Hat Inc."
+msgstr ""
+
+msgid "Welcome to Satellite"
+msgstr ""
+
+msgid "When a Host requests a template (e.g. during provisioning), Foreman selects the optimal match from the available templates of that type, in the following order:"
+msgstr ""
+
+msgid "When editing a Template, you must assign a list of Operating Systems with which this Template can be used. Optionally, you can restrict a template to a list of Hostgroups or Environments."
+msgstr ""
+
+msgid "You can find us on %{freenode} (irc.freenode.net) on #satellite6."
+msgstr ""
+
+msgid "You would probably need to attach the"
+msgstr ""
+
+msgid "and relevant log entries."
+msgstr ""
