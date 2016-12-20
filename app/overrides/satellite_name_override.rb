@@ -17,6 +17,7 @@ N_("Satellite ticketing system")
 N_("You would probably need to attach the")
 N_("Full trace")
 N_("and relevant log entries.")
+N_("(build: %{version})")
 
 
 Deface::Override.new(:virtual_path  => "home/_topbar",
@@ -68,7 +69,7 @@ Deface::Override.new(:virtual_path  => "about/index",
 Deface::Override.new(:virtual_path  => "about/index",
                      :name          => "add satellite version for about page",
                      :insert_before => "p#copyright-p",
-                     :text          => '<p id="sat-copyright-p">Red Hat Satellite<br/><%= (_("Version %{version} © %{year} Red Hat Inc.") % {:version => ForemanThemeSatellite::SATELLITE_SHORT_VERSION, :year=>DateTime.now.year}).html_safe %></p>')
+                     :text          => '<p id="sat-copyright-p">Red Hat Satellite <%= (_("(build: %{version})") % {:version => ForemanThemeSatellite::SATELLITE_VERSION}).html_safe %><br/><%= (_("Version %{version} © %{year} Red Hat Inc.") % {:version => ForemanThemeSatellite::SATELLITE_SHORT_VERSION, :year=>DateTime.now.year}).html_safe %></p>')
 
 Deface::Override.new(:virtual_path  => "about/index",
                      :name          => "change version text for about page",
