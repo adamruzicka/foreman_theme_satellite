@@ -1,0 +1,36 @@
+
+var branded_words = new Map
+<% ForemanThemeSatellite::ReplacerRepository::FOREMAN_BRAND.map do |exp, replace|  %>
+branded_words.set(new RegExp("<%= exp.source.gsub('\\', '\\\\\\') %>", "g"), "<%= replace %>");
+<% end %>
+
+function brand_string(string){
+  result = string;
+  for(let [regex, value] of branded_words) {
+    result = result.replace(regex, value);
+  }
+  return result;
+}
+
+i18n.original_jed = i18n.dcnpgettext
+
+i18n.dcnpgettext = function( domain, context, singular_key, plural_key, val ) {
+  translated = i18n.original_jed( domain, context, singular_key, plural_key, val );
+
+  return brand_string(translated);
+}
+
+if (typeof(angular) !== 'undefined') {
+  angular.module('Bastion.i18n').config([ '$provide', function($provide) {
+    $provide.decorator('translate', [
+      '$delegate',
+      function ($delegate) {
+        var originalTranslate = $delegate;
+        return function(str) {
+          originalStr = originalTranslate(str);
+          return brand_string(originalStr);
+        }
+      }
+    ]);
+  }]);
+}

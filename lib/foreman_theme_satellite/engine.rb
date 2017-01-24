@@ -76,6 +76,7 @@ module ForemanThemeSatellite
 
     initializer 'foreman_theme_satellite.assets.precompile' do |app|
       app.config.assets.precompile += assets_to_precompile
+      app.config.assets.precompile << 'theme_client_side_branding.js'
     end
 
     initializer 'foreman_theme_satellite.gettext.branding', :before=> :finisher_hook do |app|
