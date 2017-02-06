@@ -60,6 +60,9 @@ msgstr ""
 msgid "Satellite ticketing system"
 msgstr ""
 
+msgid "Server Administration Guide"
+msgstr ""
+
 msgid "Support"
 msgstr ""
 
@@ -72,16 +75,10 @@ msgstr ""
 msgid "Transition Guide"
 msgstr ""
 
-msgid "User Guide"
-msgstr ""
-
 msgid "Version %{version}"
 msgstr ""
 
 msgid "Version %{version} © %{year} Red Hat Inc."
-msgstr ""
-
-msgid "Welcome to Satellite"
 msgstr ""
 
 msgid "When a Host requests a template (e.g. during provisioning), Foreman selects the optimal match from the available templates of that type, in the following order:"
