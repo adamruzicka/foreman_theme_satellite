@@ -30,7 +30,8 @@ module ThemeApplicationHelper
     "SmartVariables" => "https://access.redhat.com/documentation/en/red-hat-satellite/#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/single//host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Configuring_Smart_Variables",
     "ConfigurationOptions" => "https://access.redhat.com/documentation/en/red-hat-satellite/#{ ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/single//host-configuration-guide/",
     "Classes" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/#sect-Red_Hat_Satellite-Host_Configuration_Guide-Importing_Parameterized_Classes_from_a_Puppet_Master",
-    "Environments" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/"
+    "Environments" => "https://access.redhat.com/documentation/en/red-hat-satellite/version-#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/host-configuration-guide/",
+    "Bookmarks" => "https://access.redhat.com/documentation/en/red-hat-satellite/6.2/paged/host-configuration-guide/44-monitoring-compliance#sect-Red_Hat_Satellite-Host_Configuration_Guide-Compliance_Reports_Overview-Searching_Compliance_Reports"
   }
 
   def association_text()
