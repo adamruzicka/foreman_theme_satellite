@@ -1,5 +1,5 @@
 require 'test_plugin_helper'
-
+require 'integration_test_helper'
 
 class AboutOverrideIntegrationTest < ActionDispatch::IntegrationTest
   test "about page" do

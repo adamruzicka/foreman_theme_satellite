@@ -1,4 +1,5 @@
 require 'test_plugin_helper'
+require 'integration_test_helper'
 
 class LoginIntegrationTest < ActionDispatch::IntegrationTest
   test "login page has correct text" do
