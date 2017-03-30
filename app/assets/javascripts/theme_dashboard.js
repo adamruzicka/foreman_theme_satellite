@@ -14,5 +14,4 @@ function start_gridster(){
         gridster.remove_widget(widget);
         $(".gridster>ul").append($(widget));
     });
-    fill_restore_list();
 }
