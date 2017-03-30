@@ -29,11 +29,6 @@ Deface::Override.new(:virtual_path  => "home/_topbar",
                      :surround      => "erb[loud]:contains('image_tag')",
                      :text          => "<%= link_to main_app.root_path do%><%= render_original %><% end %>")
 
-Deface::Override.new(:virtual_path  => "users/login",
-                     :name          => "add redhat logo",
-                     :insert_before => "div#login",
-                     :text          => "<span id='badge'><%= image_tag('Redhat-logo.png') %></span>")
-
 Deface::Override.new(:virtual_path  => "users/extlogout",
                      :name          => "change version for the external logout page",
                      # p#version
