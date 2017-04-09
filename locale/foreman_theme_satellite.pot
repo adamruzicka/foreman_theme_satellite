@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_theme_satellite 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-05 15:47-0400\n"
-"PO-Revision-Date: 2016-10-05 15:47-0400\n"
+"POT-Creation-Date: 2017-02-06 14:47-0500\n"
+"PO-Revision-Date: 2017-02-06 14:47-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -61,76 +61,72 @@ msgid "Version %{version}"
 msgstr ""
 
 #: ../app/overrides/satellite_name_override.rb:3
-msgid "Welcome to Satellite"
-msgstr ""
-
-#: ../app/overrides/satellite_name_override.rb:4
 msgid "Support"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:5
+#: ../app/overrides/satellite_name_override.rb:4
 msgid "Customer portal"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:6
+#: ../app/overrides/satellite_name_override.rb:5
 msgid "Documentation"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:7
-msgid "User Guide"
+#: ../app/overrides/satellite_name_override.rb:6
+msgid "Server Administration Guide"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:8
+#: ../app/overrides/satellite_name_override.rb:7
 msgid "Transition Guide"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:9
+#: ../app/overrides/satellite_name_override.rb:8
 msgid "API Guide"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:10
+#: ../app/overrides/satellite_name_override.rb:9
 msgid "Blog"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:11
+#: ../app/overrides/satellite_name_override.rb:10
 msgid "Red Hat Satellite Blog"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:12
+#: ../app/overrides/satellite_name_override.rb:11
 msgid "IRC"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:13
+#: ../app/overrides/satellite_name_override.rb:12
 msgid "You can find us on %{freenode} (irc.freenode.net) on #satellite6."
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:14
+#: ../app/overrides/satellite_name_override.rb:13
 msgid "Version %{version} © %{year} Red Hat Inc."
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:15
+#: ../app/overrides/satellite_name_override.rb:14
 msgid "Includes %{system} © 2009-%{year} Paul Kelly and Ohad Levy"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:16
+#: ../app/overrides/satellite_name_override.rb:15
 msgid ""
 "If you feel this is an error with Satellite 6 itself, please open a new issue "
 "with"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:17
+#: ../app/overrides/satellite_name_override.rb:16
 msgid "Satellite ticketing system"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:18
+#: ../app/overrides/satellite_name_override.rb:17
 msgid "You would probably need to attach the"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:19
+#: ../app/overrides/satellite_name_override.rb:18
 msgid "Full trace"
 msgstr ""
 
-#: ../app/overrides/satellite_name_override.rb:20
+#: ../app/overrides/satellite_name_override.rb:19
 msgid "and relevant log entries."
 msgstr ""
 
