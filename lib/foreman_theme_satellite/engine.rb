@@ -98,6 +98,7 @@ module ForemanThemeSatellite
         Foreman::Model::Ovirt.send :include, Ovirt
         Realm.send :include, RealmTheme
         Setting.send :include, SettingsBranding
+        Katello::Ping.send :include, SatellitePackages
       rescue => e
         puts "ForemanThemeSatellite: skipping engine hook (#{e.to_s})"
       end
