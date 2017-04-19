@@ -1,7 +1,8 @@
 module SatellitePackages
   extend ActiveSupport::Concern
   included do
-    self.const_set(:PACKAGES, %w(katello candlepin pulp qpid foreman tfm hammer satellite))
+    old_packages = remove_const(:PACKAGES)
+    const_set(:PACKAGES, (old_packages + ['satellite']).freeze)
   end
 end
 
