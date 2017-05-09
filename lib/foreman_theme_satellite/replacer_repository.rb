@@ -5,6 +5,12 @@ module ForemanThemeSatellite
   # it replaces branded words with their downstream counterparts.
   class ReplacerRepository < ::FastGettext::TranslationRepository::Base
     FOREMAN_BRAND = {
+      /\bHTTP Proxy\b(?!-)/    => 'HTTP Proxy',
+      /\bHTTP proxy\b(?!-)/    => 'HTTP Proxy',
+      /\bIgnore Proxy\b(?!-)/  => 'Ignore Proxy',
+      /\bIgnore proxy\b(?!-)/  => 'Ignore Proxy',
+      /\bLeave this blank if no proxy is used\b(?!-)/ => 'Leave this blank if no proxy is used',
+      /\bbypass proxy settings\b(?!-)/ => 'bypass proxy settings',
       /\bForeman\b(?!-)/       => 'Satellite',
       /\bforeman\b(?!-)/       => 'satellite',
       /\bsmart-proxy\b(?!-)/   => 'capsule',
