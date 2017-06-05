@@ -31,7 +31,7 @@ module ThemeApplicationHelper
     "ConfigurationOptions" => "https://access.redhat.com/documentation/en-us/red-hat-satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host-configuration-guide/",
     "Classes" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host_configuration_guide/sect-red_hat_satellite-host_configuration_guide-configuring_the_provisioning_environment-parameters#sect-Red_Hat_Satellite-Host_Configuration_Guide-Importing_Parameterized_Classes_from_a_Puppet_Master",
     "Environments" => "https://access.redhat.com/documentation/en-us/red-hat-satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host-configuration-guide/",
-    "Bookmarks" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host_configuration_guide/sect-red_hat_satellite-host_configuration_guide-compliance_policy-monitoring_compliance#sect-Red_Hat_Satellite-Host_Configuration_Guide-Compliance_Reports_Overview-Searching_Compliance_Reports"
+    "Bookmarks" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host_configuration_guide/sect-Red_Hat_Satellite-Host_Configuration_Guide-Searching_and_Bookmarking"
   }
 
   def association_text()
