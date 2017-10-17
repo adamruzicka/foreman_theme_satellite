@@ -36,7 +36,7 @@ Deface::Override.new(:virtual_path  => "users/extlogout",
                      :replace       => "div.details p:last",
                      :text          => '<p><%= _("Version %{version}") % {:version => ForemanThemeSatellite::SATELLITE_VERSION} %></p>')
 
-Deface::Override.new(:virtual_path  => "users/login",
+Deface::Override.new(:virtual_path  => "users/_welcome_box",
                      :name          => "change version for login page",
                      # p#version
                      :replace       => "div.details p#version",
