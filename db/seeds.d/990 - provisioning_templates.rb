@@ -12,6 +12,8 @@ templates = [{:name => "Satellite Kickstart Default",           :source => "kick
              {:name => "Satellite Kickstart Default User Data", :source => "userdata-katello.erb",       :template_kind => kinds[:user_data]},
              {:name => "Satellite Kickstart Default Finish",    :source => "finish-katello.erb",         :template_kind => kinds[:finish]},
              {:name => "pxelinux_discovery",                    :source => "snippets/_pxelinux_discovery.erb", :snippet => true},
+             {:name => "pxegrub_discovery",                     :source => "snippets/_pxegrub_discovery.erb", :snippet => true},
+             {:name => "pxegrub2_discovery",                    :source => "snippets/_pxegrub2_discovery.erb", :snippet => true},
              {:name => "idm_register",                          :source => "snippets/idm_register.erb",  :snippet => true},
              {:name => "Satellite Atomic Kickstart Default",    :source => "kickstart-katello-atomic.erb", :template_kind => kinds[:provision]}]
 
