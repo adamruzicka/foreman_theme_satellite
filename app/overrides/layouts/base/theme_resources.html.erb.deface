@@ -1,3 +1,4 @@
 <!-- insert_bottom 'head' -->
 <%= stylesheet_link_tag('theme') %>
 <%= javascript_include_tag('theme_dashboard') %>
+<%= javascript_include_tag('theme_client_side_branding') %>
