@@ -1,14 +1,17 @@
+<% require_relative '../../../lib/foreman_theme_satellite/branded_words' %>
 
-var branded_words = new Map
-<% ForemanThemeSatellite::ReplacerRepository::FOREMAN_BRAND.map do |exp, replace|  %>
-branded_words.set(new RegExp("<%= exp.source.gsub('\\', '\\\\\\') %>", "g"), "<%= replace %>");
+var branded_words = []
+<% ForemanThemeSatellite::FOREMAN_BRAND.map do |exp, replace|  %>
+branded_words.push([new RegExp("<%= exp.source.gsub('\\', '\\\\\\') %>", "g"), "<%= replace %>"]);
 <% end %>
 
 function brand_string(string){
   result = string;
-  for(let [regex, value] of branded_words) {
+  branded_words.forEach(function(tuple){
+    regex = tuple[0];
+    value = tuple[1];
     result = result.replace(regex, value);
-  }
+  });
   return result;
 }
 
