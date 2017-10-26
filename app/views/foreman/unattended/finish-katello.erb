@@ -57,4 +57,9 @@ yum -t -y -e 0 update
 <%= snippet 'saltstack_setup' %>
 <% end -%>
 
+<% if host_param_true?('ansible_tower_provisioning') -%>
+<%= save_to_file('/root/ansible_provisioning_call.sh', snippet('ansible_tower_callback_script')) %>
+/root/ansible_provisioning_call.sh
+<% end -%>
+
 exit 0

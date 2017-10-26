@@ -126,6 +126,8 @@ yum -t -y -e 0 update
 <%= snippet 'saltstack_setup' %>
 <% end -%>
 
+<%= snippet('ansible_provisioning_callback') %>
+
 sync
 
 <% if @provisioning_type == nil || @provisioning_type == 'host' -%>
