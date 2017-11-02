@@ -19,6 +19,6 @@ class RemoveSatelliteFromNotificationNameSpellCorrection < ActiveRecord::Migrati
       end
     end
 
-    satellite_sync_errata_notification.destroy
+    satellite_sync_errata_notification.destroy if satellite_sync_errata_notification.present?
   end
 end
