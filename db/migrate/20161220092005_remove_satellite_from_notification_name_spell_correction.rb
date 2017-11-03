@@ -14,7 +14,7 @@ class RemoveSatelliteFromNotificationNameSpellCorrection < ActiveRecord::Migrati
     satellite_sync_errata_notification = FakeMailNotification.where(name: 'satellite_sync_errata').first
 
     if sync_errata_notification && satellite_sync_errata_notification && FakeUserMailNotification.where(:mail_notification_id => sync_errata_notification.id).empty?
-      satellite_sync_errata_notification.user_mail_notifications.each do |user_mail_notificiation|
+      satellite_sync_errata_notification.user_mail_notifications.each do |user_mail_notification|
         FakeUserMailNotification.create(:user_id => user_mail_notification.user_id, :mail_notification_id => sync_errata_notification.id)
       end
     end
