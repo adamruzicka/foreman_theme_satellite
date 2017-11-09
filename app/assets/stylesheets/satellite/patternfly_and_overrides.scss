@@ -9,3 +9,40 @@ body {
   width: 100%;
   max-width: 100%;
 }
+
+#topbar {
+  background: #1d1d1d;
+}
+
+.nav-pf-vertical {
+  background: #292e34;
+  .list-group-item {
+    &.active,
+    &:hover {
+      > a {
+        background-color: #393f44;
+      }
+    }
+  }
+}
+
+.nav-pf-secondary-nav {
+  background: #393f44;
+  &:hover {
+    > a {
+    background-color: #393f44
+    } 
+  }
+}
+
+.nav-pf-secondary-nav .list-group-item {
+  > a {
+    background-color: #393f44;
+  }
+  &.active,
+  &:hover {
+    > a {
+      background-color: #4d5258;
+    }
+  }
+}

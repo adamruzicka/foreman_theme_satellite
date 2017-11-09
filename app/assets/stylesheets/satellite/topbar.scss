@@ -1,72 +1,19 @@
 @import "colors";
 
-@mixin box-shadow($shadow...) {
-  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
-  box-shadow: $shadow;
-}
-
-@mixin linear_gradient($start_color, $end_color) {
-  background: $start_color; /* fallback for older browsers */
-  background: -webkit-linear-gradient(top, $start_color 0%,$end_color 100%);
-  background: linear-gradient(to bottom, $start_color 0%,$end_color 100%);
-}
-
-.navbar {
-  .active > a, .open > a {
-    @include linear-gradient($hover_gradient_start, $hover_gradient_end);
-  }
-}
-
 .navbar-brand {
   height: inherit;
 }
 
 .navbar .nav .org-switcher > a {
   font-size: 14px;
-  border-right: solid 1px $border_color;
 
   .caret {
     margin-left: 20px;
   }
 }
 
-.navbar-outer {
-  background-color: $primary_color;
-  border-color: darken($primary_color, 5%);
-  border-top: 3px solid #cc0000;
-  white-space: nowrap;
-}
-
 .navbar-brand img {
   height: 10px;
   width: 141px;
-  margin-bottom: 1px;
-}
-
-.navbar-inner {
-  border-top: 1px solid $border_color;
-
-  @include linear-gradient($primary_gradient_start, $primary_gradient_end);
-}
-
-
-.navbar-inner {
-  a.manage-menu {
-    font-size: 11px;
-    color: #0088cc;
-
-    &:hover,
-    &:focus {
-      color: #ffffff;
-    }
-  }
-
-  .glyphicon {
-    color: #cccccc;
-  }
-}
-
-//reassign theme colors
-.navbar-collapse.in{
-  @include linear-gradient($primary_gradient_start, $primary_gradient_end);
+  margin-top: 13px;
 }
