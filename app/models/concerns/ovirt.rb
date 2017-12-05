@@ -2,7 +2,7 @@ module Ovirt
   extend ActiveSupport::Concern
   included do
     define_singleton_method :provider_friendly_name do
-      "RHEV"
+      "RHV"
     end
   end
 end
