@@ -31,7 +31,8 @@ module ThemeApplicationHelper
     "ConfigurationOptions" => "https://access.redhat.com/documentation/en-us/red-hat-satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host-configuration-guide/",
     "Classes" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host_configuration_guide/sect-red_hat_satellite-host_configuration_guide-configuring_the_provisioning_environment-parameters#sect-Red_Hat_Satellite-Host_Configuration_Guide-Importing_Parameterized_Classes_from_a_Puppet_Master",
     "Environments" => "https://access.redhat.com/documentation/en-us/red-hat-satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host-configuration-guide/",
-    "Bookmarks" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host_configuration_guide/sect-Red_Hat_Satellite-Host_Configuration_Guide-Searching_and_Bookmarking"
+    "Bookmarks" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/host_configuration_guide/sect-Red_Hat_Satellite-Host_Configuration_Guide-Searching_and_Bookmarking",
+    "NoVNC" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide/provisioning_virtual_machines_in_kvm#Provisioning_Virtual_Machines_in_KVM-Configuring_noVNC"
   }
 
   def association_text()
