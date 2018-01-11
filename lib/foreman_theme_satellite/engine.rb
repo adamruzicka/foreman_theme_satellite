@@ -22,7 +22,7 @@ module ForemanThemeSatellite
     config.app_middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{config.root}/public")
 
     initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
-      Setting.send :include, SettingsBranding
+      Setting.singleton_class.prepend SettingsBranding
     end
 
 
