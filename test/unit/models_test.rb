@@ -7,7 +7,7 @@ class ModelsTest < ActiveSupport::TestCase
   end
 
   test "check ovirt friendly name" do
-    assert_equal Foreman::Model::Ovirt::provider_friendly_name, "RHEV", "Friendly name override was unsuccessful"
+    assert_equal Foreman::Model::Ovirt::provider_friendly_name, "RHV", "Friendly name override was unsuccessful"
   end
 
   test "check realms types" do

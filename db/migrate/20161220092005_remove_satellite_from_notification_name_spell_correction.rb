@@ -1,4 +1,4 @@
-class RemoveSatelliteFromNotificationNameSpellCorrection < ActiveRecord::Migration
+class RemoveSatelliteFromNotificationNameSpellCorrection < ActiveRecord::Migration[4.2]
   class FakeMailNotification < ActiveRecord::Base
     self.table_name = 'mail_notifications'
 

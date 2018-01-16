@@ -2,8 +2,8 @@
 require 'test_helper'
 
 # Add plugin to FactoryGirl's paths
-FactoryGirl.definition_file_paths << File.join(File.dirname(__FILE__), 'factories')
-FactoryGirl.reload
+FactoryBot.definition_file_paths << File.join(File.dirname(__FILE__), 'factories')
+FactoryBot.reload
 
 class ActionDispatch::IntegrationTest
   setup :disable_webpack
@@ -15,4 +15,3 @@ class ActionDispatch::IntegrationTest
     Webpack::Rails::Manifest.stubs(:asset_paths).returns([])
   end
 end
-

@@ -1,13 +1,21 @@
 require 'test_plugin_helper'
+require 'integration_test_helper'
 
-class TopBarOverrideIntegrationTest < ActionController::TestCase
-  tests DashboardController
-
+class TopBarOverrideIntegrationTest < ActionDispatch::IntegrationTest
   test "top bar links" do
-    get :index, {}, set_session_user
-
-    assert_select "div.navbar-outer a[href='/']"
-    assert_select "div.navbar-inner a[href='/hosts']"
+    visit root_path
+    within("nav.navbar-pf-vertical .navbar-brand") do
+      assert page.has_link?(:href => "/")
+    end
+    within("#vertical-nav") do
+      assert page.has_link?("Dashboard", :href => "/")
+      assert page.has_link?("All Hosts", :href => "/hosts")
+      assert page.has_link?("Config Management", :href => "/config_reports?search=eventful+%3D+true")
+      assert page.has_link?("Facts", :href => "/fact_values")
+      assert page.has_link?("Audits", :href => "/audits")
+      assert page.has_link?("Statistics", :href => "/statistics")
+      assert page.has_link?("Trends", :href => "/trends")
+    end
   end
 
 end
