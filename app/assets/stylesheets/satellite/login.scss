@@ -1,47 +1,38 @@
+@import "colors";
+
 $bg-img: image-url('login_bg.jpg');
+$screen-sm-min: 768px;
+$login-bg-size: 100% auto;
 
-@media (min-width: 768px){
-  .login-page #brand {
-    top: -70px;
+.login-pf {
+  body {
+    background: $login-bg-color;
+
+    .login-page {
+      background: $login-bg-color;
+      background-image: $bg-img;
+      background-size: $login-bg-size;
+      color: $login-color;
+
+      #brand {
+        top: -40px;
+        height: 40px;
+
+        img {
+          height: 19px;
+          max-width: 100%;
+        }
+      }
+
+      #badge {
+        margin: 0 auto 70px;
+        padding-top: 20px;
+
+        @media (min-width: $screen-sm-min) {
+          margin-right: 64px;
+          margin-top: 50px;
+        }
+      }
+    }
   }
-}
-
-.login-page #brand img {
-  display: block;
-  margin: 0;
-  max-width: 100%;
-}
-
-.login-page #badge {
-  display: block;
-  margin: 0 auto 70px;
-  padding-top: 20px;
-  position: relative;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .login-page #badge {
-    float: right;
-    margin-right: 64px;
-    margin-top: 50px;
-  }
-}
-
-.login-page {
-  height: 100%;
-  background: #1d2226;
-  background-image: $bg-img;
-  background-size: 100% auto;
-  color: #fff;
-}
-
-.login-page .container {
-  padding-top: 20px;
-}
-
-.login-page #brand img {
-  height: 19px;
-  width: 270px;
-  margin-bottom: 1px;
 }
