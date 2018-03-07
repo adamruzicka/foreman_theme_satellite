@@ -105,4 +105,20 @@ module ForemanThemeSatellite
       end
     end
   end
+
+  METADATA_PATH = '/usr/share/satellite/metadata.yml'.freeze
+
+  def self.get_satellite_version
+    File.exist?(METADATA_PATH) ? YAML.load_file(METADATA_PATH)['version'] : "0.0.0-development"
+  end
+
+  def self.get_satellite_short_version
+    Foreman::Version.new(SATELLITE_VERSION).short
+  end
+
+  #this file indicates the satellite version that will be represented on the login page.
+  SATELLITE_VERSION = self.get_satellite_version
+
+  #this file indicates the satellite version that will be used on links to documentation.
+  SATELLITE_SHORT_VERSION = self.get_satellite_short_version
 end
