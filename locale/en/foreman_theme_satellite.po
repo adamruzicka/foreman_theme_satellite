@@ -15,19 +15,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "(build: %{version})"
+msgstr ""
+
 msgid "API Guide"
+msgstr ""
+
+msgid "Abstract async task"
+msgstr ""
+
+msgid "Action with sub plans"
+msgstr ""
+
+msgid "Add Sync Plan Products"
+msgstr ""
+
+msgid "Attach subscriptions"
+msgstr ""
+
+msgid "Auto attach subscriptions"
+msgstr ""
+
+msgid "Auto-attach subscriptions"
 msgstr ""
 
 msgid "Blog"
 msgstr ""
 
+msgid "Configure capsule"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Create Package Group"
+msgstr ""
+
+msgid "Create repos"
+msgstr ""
+
 msgid "Customer portal"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete Activation Key"
+msgstr ""
+
+msgid "Delete Lifecycle Environment"
+msgstr ""
+
+msgid "Delete Package Group"
+msgstr ""
+
+msgid "Delete Product"
+msgstr ""
+
+msgid "Destroy"
+msgstr ""
+
+msgid "Destroy Content Host"
+msgstr ""
+
+msgid "Disable"
 msgstr ""
 
 msgid "Documentation"
 msgstr ""
 
+msgid "Enable"
+msgstr ""
+
 msgid "Environment only"
+msgstr ""
+
+msgid "Errata mail"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Filtered index content"
 msgstr ""
 
 msgid "Full trace"
@@ -39,13 +108,52 @@ msgstr ""
 msgid "Host group only"
 msgstr ""
 
+msgid "Hypervisors"
+msgstr ""
+
+msgid "Hypervisors update"
+msgstr ""
+
 msgid "IRC"
 msgstr ""
 
 msgid "If you feel this is an error with Satellite 6 itself, please open a new issue with"
 msgstr ""
 
+msgid "Import Puppet classes"
+msgstr ""
+
+msgid "Import facts"
+msgstr ""
+
 msgid "Includes %{system} © 2009-%{year} Paul Kelly and Ohad Levy"
+msgstr ""
+
+msgid "Incremental Update"
+msgstr ""
+
+msgid "Incremental Update of  Content View Version(s) "
+msgstr ""
+
+msgid "Index content"
+msgstr ""
+
+msgid "Index errata"
+msgstr ""
+
+msgid "Index package groups"
+msgstr ""
+
+msgid "Install Applicable Errata"
+msgstr ""
+
+msgid "Install erratum"
+msgstr ""
+
+msgid "Install package"
+msgstr ""
+
+msgid "Install package group"
 msgstr ""
 
 msgid "Operating System"
@@ -54,7 +162,52 @@ msgstr ""
 msgid "Operating system default"
 msgstr ""
 
+msgid "Package Profile Update"
+msgstr ""
+
+msgid "Product Create"
+msgstr ""
+
+msgid "Promote"
+msgstr ""
+
+msgid "Promotion to Environment"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
 msgid "Red Hat Satellite Blog"
+msgstr ""
+
+msgid "Register Host"
+msgstr ""
+
+msgid "Reindex subscriptions"
+msgstr ""
+
+msgid "Remove Content"
+msgstr ""
+
+msgid "Remove Version"
+msgstr ""
+
+msgid "Remove Versions and Associations"
+msgstr ""
+
+msgid "Remove from Environment"
+msgstr ""
+
+msgid "Remove package"
+msgstr ""
+
+msgid "Remove package group"
+msgstr ""
+
+msgid "Remove subscriptions"
+msgstr ""
+
+msgid "Republish Version Repositories"
 msgstr ""
 
 msgid "Satellite ticketing system"
@@ -66,6 +219,12 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
+msgid "Synchronize"
+msgstr ""
+
+msgid "Synchronize capsule"
+msgstr ""
+
 msgid "The final entry, Operating System default, can be set by editing the %s page."
 msgstr ""
 
@@ -73,6 +232,36 @@ msgid "Theme changes for Satellite 6."
 msgstr ""
 
 msgid "Transition Guide"
+msgstr ""
+
+msgid "Unregister Host"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Update Content Overrides"
+msgstr ""
+
+msgid "Update Sync Plan"
+msgstr ""
+
+msgid "Update Sync Plan Products"
+msgstr ""
+
+msgid "Update for host"
+msgstr ""
+
+msgid "Update package"
+msgstr ""
+
+msgid "Update release version for host"
+msgstr ""
+
+msgid "Upload errata into"
+msgstr ""
+
+msgid "Upload into"
 msgstr ""
 
 msgid "Version %{version}"
