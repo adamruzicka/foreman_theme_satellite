@@ -14,6 +14,18 @@ module ForemanThemeSatellite
 
     assets_to_override = ["#{engine_peth}/app/assets/images"]
 
+    # Precompile any JS or CSS files under app/assets/
+    # If requiring files from each other, list them explicitly here to avoid precompiling the same
+    # content twice.
+    assets_to_precompile =
+        Dir.chdir(root) do
+          Dir['app/assets/stylesheets/**/*', 'app/assets/images/**/*', 'app/assets/javascripts/**/*'].map do |f|
+            f.split(File::SEPARATOR, 4).last
+          end
+        end
+    assets_to_precompile << 'theme_client_side_branding.js'
+    assets_to_precompile << 'theme.css'
+
     if ENV['ENABLE_PRY_RACK'] == 'true'
       require File.expand_path("../pry_rack.rb", __FILE__)
       config.app_middleware.insert_before(::ActionDispatch::Static, PryRack)
@@ -50,6 +62,8 @@ module ForemanThemeSatellite
                         "RealmTest" => ["realm can be assigned to locations"],
                         "LocationTest" => ["should clone location with all associations"]
                        })
+
+        precompile_assets(assets_to_precompile)
       end
     end
 
@@ -59,24 +73,8 @@ module ForemanThemeSatellite
       end
     end
 
-    # Precompile any JS or CSS files under app/assets/
-    # If requiring files from each other, list them explicitly here to avoid precompiling the same
-    # content twice.
-    assets_to_precompile =
-        Dir.chdir(root) do
-          Dir['app/assets/stylesheets/**/*', 'app/assets/images/**/*', 'app/assets/javascripts/**/*'].map do |f|
-            f.split(File::SEPARATOR, 4).last
-          end
-        end
-
     initializer 'foreman_theme_satellite.configure_assets', group: :assets do
-      SETTINGS[:foreman_theme_satellite] = { assets: { precompile: assets_to_precompile } }
       assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
-    end
-
-    initializer 'foreman_theme_satellite.assets.precompile' do |app|
-      app.config.assets.precompile += assets_to_precompile
-      app.config.assets.precompile << 'theme_client_side_branding.js'
     end
 
     initializer 'foreman_theme_satellite.gettext.branding', :before=> :finisher_hook do |app|
@@ -88,11 +86,6 @@ module ForemanThemeSatellite
 
     #Include concerns in this config.to_prepare block
     config.to_prepare do
-      if defined?(Sass)
-        Rails.application.config.assets.precompile += %w( theme.css )
-        Rails.application.config.sass.load_paths << "#{engine_peth}/app/assets/stylesheets"
-        assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
-      end
       begin
         # Include your monkey-patches over here
         Foreman::Model::Openstack.send :include, Openstack
