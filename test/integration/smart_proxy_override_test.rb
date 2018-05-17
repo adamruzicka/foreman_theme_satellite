@@ -8,8 +8,5 @@ class SmartProxyOverrideIntegrationTest < ActionDispatch::IntegrationTest
 
   test "create new page" do
     assert_new_button(smart_proxies_path, "Create Capsule", new_smart_proxy_path)
-    fill_in "smart_proxy_name", :with => "DNS Worldwide"
-    fill_in "smart_proxy_url", :with => "http://dns.example.com"
-    assert_submit_button(smart_proxies_path)
   end
 end
