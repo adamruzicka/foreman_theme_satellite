@@ -2,6 +2,8 @@ module ForemanThemeSatellite
   FOREMAN_BRAND = {
     /\bHTTP Proxy\b(?!-)/    => 'HTTP Proxy',
     /\bHTTP proxy\b(?!-)/    => 'HTTP Proxy',
+    /\bHTTP Proxies\b(?!-)/  => 'HTTP Proxies',
+    /\bHTTP\(S\) proxy\b(?!-)/ => 'HTTP(S) proxy',
     /\bIgnore Proxy\b(?!-)/  => 'Ignore Proxy',
     /\bIgnore proxy\b(?!-)/  => 'Ignore Proxy',
     /\bLeave this blank if no proxy is used\b(?!-)/ => 'Leave this blank if no proxy is used',
@@ -30,6 +32,6 @@ module ForemanThemeSatellite
     /\bProxy\b(?!-)/         => 'Capsule',
     /\bproxy\b(?!-)/         => 'Capsule',
     /\bProxies\b(?!-)/       => 'Capsules',
-    /\bproxies\b(?!-)/       => 'Capsules' 
+    /\bproxies\b(?!-)/       => 'Capsules'
   }.freeze
 end
