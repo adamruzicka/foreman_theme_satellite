@@ -1,7 +1,7 @@
 # Responsible for silently overwriting setting's default value.
 module SettingsBranding
   def branded_settings
-    domain = Facter.value(:domain) || SETTINGS[:domain]
+    domain = SETTINGS[:domain]
     @branded_settings ||= {
       'email_reply_address' => "satellite-noreply@#{domain}",
       'email_subject_prefix' => '[satellite]',
