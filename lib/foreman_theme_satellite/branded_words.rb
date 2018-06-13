@@ -17,6 +17,7 @@ module ForemanThemeSatellite
     /\bsmart-proxies\b(?!-)/ => 'capsules',
     /\bSmart-proxies\b(?!-)/ => 'Capsules',
     /\bSmart Proxies\b(?!-)/ => 'Capsules',
+    /\bSmart Proxy\(ies\)(?!-)/ => 'Capsule(s)',
     /\bSmart Proxy\b(?!-)/   => 'Capsule',
     /\bsmart proxy\b(?!-)/   => 'capsule',
     /\bSmart-Proxies\b(?!-)/ => 'Capsules',
