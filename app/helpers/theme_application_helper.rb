@@ -1,6 +1,7 @@
 module ThemeApplicationHelper
 
   USER_GUIDE_DICTIONARY = {
+    "ForemanRemoteExecution" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Executing_Remote_Jobs",
     "ExecutingaJob" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Executing_Remote_Jobs",
     "JobTemplates" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Setting_up_Job_Templates",
     "FactsandtheENC" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/puppet_guide/chap-red_hat_satellite-puppet_guide-storing_and_maintaining_host_information#sect-Red_Hat_Satellite-Puppet_Guide-Storing_and_Maintaining_Host_Information-Using_Facter_and_Facts",
