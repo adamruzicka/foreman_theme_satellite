@@ -66,7 +66,7 @@ For example, adding the redhat logo to the login screen
 Deface::Override.new(:virtual_path  => "users/login",
                      :name          => "add redhat logo",
                      :insert_before => "div#login",
-                     :text          => "<span id='badge'><%= image_tag('Redhat-logo.png') %></span>")
+                     :text          => "<span id='badge'><%= image_tag('Redhat-logo.svg') %></span>")
 ```
 
 

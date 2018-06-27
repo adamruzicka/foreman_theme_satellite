@@ -28,6 +28,10 @@ $login-bg-size: 100% auto;
         margin: 0 auto 70px;
         padding-top: 20px;
 
+        img {
+          width: 230px;
+        }
+
         @media (min-width: $screen-sm-min) {
           margin-right: 64px;
           margin-top: 50px;
