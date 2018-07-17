@@ -1,13 +1,22 @@
+# frozen_string_literal: true
+
 module ForemanThemeSatellite
+  # This list is used for substitution of branded words by both client and server.
+  # The server just uses the list as is.
+  # The client is consuming it by generated .js.erb file: app/assets/javascripts/theme_client_side_branding.js.erb.
+  # For now, modifiers are not supported by the generator.
   FOREMAN_BRAND = {
     /\bHTTP Proxy\b(?!-)/    => 'HTTP Proxy',
     /\bHTTP proxy\b(?!-)/    => 'HTTP Proxy',
-    /\bHTTP Proxies\b(?!-)/  => 'HTTP Proxies',
+    /\b[Hh][Tt][Tt][Pp] [Pp]roxies\b(?!-)/ => 'HTTP Proxies',
     /\bHTTP\(S\) proxy\b(?!-)/ => 'HTTP(S) proxy',
     /\bIgnore Proxy\b(?!-)/  => 'Ignore Proxy',
     /\bIgnore proxy\b(?!-)/  => 'Ignore Proxy',
     /\bLeave this blank if no proxy is used\b(?!-)/ => 'Leave this blank if no proxy is used',
     /\bbypass proxy settings\b(?!-)/ => 'bypass proxy settings',
+    /\bURL of the proxy\b(?!-)/ => 'URL of the proxy',
+    %r{\bhttps://proxy.example.com:8080\b(?!-)} => 'https://proxy.example.com:8080',
+    /\bproxy for all outgoing HTTP connections\b(?!-)/ => 'proxy for all outgoing HTTP connections',
     /\bForeman\b(?!-)/       => 'Satellite',
     /\bforeman\b(?!-)/       => 'satellite',
     /\bsmart-proxy\b(?!-)/   => 'capsule',
