@@ -50,6 +50,7 @@ Deface::Override.new(:virtual_path  => "about/index",
                                        :rel => \"external\" %> to get support, find solutions to common questions, and more.</p><h6><%= _(\"Documentation\") %></h6>
                                         <ul>
                                         <li><%= link_to _('Complete Product Documentation for Red Hat Satellite'),\"https://access.redhat.com/documentation/en/red-hat-satellite\", :rel => \"external\" %></li>
+                                        <li><%= link_to _('API Resources'), apipie_apipie_path, :title => _('Automate Satellite via a simple and powerful API') %></li>
                                         </ul>
                                         <h6><%= _(\"Blog\") %></h6>
                                         <ul>
