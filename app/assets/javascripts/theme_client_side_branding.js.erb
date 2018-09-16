@@ -37,3 +37,19 @@ if (typeof(angular) !== 'undefined') {
     ]);
   }]);
 }
+
+if (typeof(angular) !== 'undefined') {
+  angular.module('gettext').config([ '$provide', function($provide) {
+    $provide.decorator('gettextCatalog', [
+      '$delegate',
+      function ($delegate) {
+        var originalTranslate = $delegate.getString;
+        $delegate.getString = function(str) {
+          originalStr = originalTranslate.apply($delegate, [str]);
+          return brand_string(originalStr);
+        }
+        return $delegate;
+      }
+    ]);
+  }]);
+}

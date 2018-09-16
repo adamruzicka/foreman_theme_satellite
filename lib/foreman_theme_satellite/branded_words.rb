@@ -42,6 +42,7 @@ module ForemanThemeSatellite
     /\bProxy\b(?!-)/         => 'Capsule',
     /\bproxy\b(?!-)/         => 'Capsule',
     /\bProxies\b(?!-)/       => 'Capsules',
-    /\bproxies\b(?!-)/       => 'Capsules'
+    /\bproxies\b(?!-)/       => 'Capsules',
+    %r{https://theforeman.org/plugins/katello/(?!-)} => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/managing_hosts/chap-red_hat_satellite-managing_hosts-managing_hosts#sect-Red_Hat_Satellite-Managing_Hosts-Managing_Hosts-Registration"
   }.freeze
 end
