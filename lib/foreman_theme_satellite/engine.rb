@@ -73,10 +73,6 @@ module ForemanThemeSatellite
       end
     end
 
-    initializer 'foreman_theme_satellite.configure_assets', group: :assets do
-      assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
-    end
-
     initializer 'foreman_theme_satellite.gettext.branding', :before=> :finisher_hook do |app|
       require File.expand_path('../replacer_repository', __FILE__)
       FastGettext.translation_repositories.each do |key, repo|
@@ -87,6 +83,7 @@ module ForemanThemeSatellite
     #Include concerns in this config.to_prepare block
     config.to_prepare do
       begin
+        assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
         # Include your monkey-patches over here
         Foreman::Model::Openstack.send :include, Openstack
         Foreman::Model::Ovirt.send :include, Ovirt
