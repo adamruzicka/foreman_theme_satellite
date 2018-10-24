@@ -73,14 +73,14 @@ module ForemanThemeSatellite
       end
     end
 
-    initializer 'foreman_theme_satellite.gettext.branding', :before=> :finisher_hook do |app|
+    initializer 'foreman_theme_satellite.gettext.branding', :before => :finisher_hook do |app|
       require File.expand_path('../replacer_repository', __FILE__)
       FastGettext.translation_repositories.each do |key, repo|
         FastGettext.translation_repositories[key] = ::ForemanThemeSatellite::ReplacerRepository.new(repo)
       end
     end
 
-    #Include concerns in this config.to_prepare block
+    # Include concerns in this config.to_prepare block
     config.to_prepare do
       begin
         assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
@@ -91,7 +91,7 @@ module ForemanThemeSatellite
         Setting.send :include, SettingsBranding
         Katello::Ping.send :include, SatellitePackages
       rescue => e
-        puts "ForemanThemeSatellite: skipping engine hook (#{e.to_s})"
+        puts "ForemanThemeSatellite: skipping engine hook (#{e})"
       end
     end
   end

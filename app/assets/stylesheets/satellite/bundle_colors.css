@@ -1,0 +1,24 @@
+.nav-pf-secondary-nav {
+  background-color: #474C51 !important;
+}
+.nav-pf-secondary-nav .mobile-active a .list-group-item-value {
+  background-color: #393F44 !important;
+}
+.nav-pf-secondary-nav .list-group-item a {
+  background-color: #474C51 !important;
+}
+.nav-pf-secondary-nav .list-group-item a:hover .list-group-item-value {
+  background-color: #393F44 !important;
+}
+.nav-pf-vertical {
+  background-color: #393F44 !important;
+}
+.nav-pf-vertical .list-group .list-group-item a:hover {
+  background-color: #474C51;
+}
+.nav-pf-vertical .list-group .list-group-item:hover a {
+  background-color: #474C51 !important;
+}
+.nav-pf-vertical .list-group .list-group-item.active a {
+  background-color: #474C51;
+}

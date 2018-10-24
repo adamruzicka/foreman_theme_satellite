@@ -1,0 +1,31 @@
+.login-pf body {
+  background: #CC0000;
+}
+.nav-pf-vertical {
+  background: #393F44;
+}
+.nav-pf-vertical .list-group-item.active > a, .nav-pf-vertical .list-group-item:hover > a {
+  background-color: #474C51;
+}
+.nav-pf-secondary-nav {
+  background: #474C51;
+}
+.nav-pf-secondary-nav .list-group-item > a {
+  background-color: #474C51;
+}
+.nav-pf-secondary-nav .list-group-item.active > a, .nav-pf-secondary-nav .list-group-item:hover > a {
+  background-color: #393F44;
+}
+.auto-refresh.on {
+  color: #CC0000;
+}
+.login-pf body .login-page {
+  background: #CC0000;
+}
+.navbar .active > a,
+.navbar .open > a {
+  background: linear-gradient(to bottom, #72757A, #64686C);
+}
+.stacked-content.tab-content {
+  border: 1px solid #474C51;
+}
