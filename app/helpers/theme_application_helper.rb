@@ -1,6 +1,7 @@
 module ThemeApplicationHelper
 
   USER_GUIDE_DICTIONARY = {
+    "SmartMatchers" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/puppet_guide/chap-red_hat_satellite-puppet_guide-adding_puppet_modules_to_red_hat_satellite_6#sect-Red_Hat_Satellite-Puppet_Guide-Adding_Puppet_Modules_to_Red_Hat_Satellite_6-Configuring_Smart_Class_Parameters",
     "ImportingRoles" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles",
     "ForemanRemoteExecution" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Executing_Remote_Jobs",
     "ExecutingaJob" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Executing_Remote_Jobs",
