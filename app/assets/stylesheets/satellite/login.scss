@@ -1,18 +1,12 @@
-@import "colors";
-
 $bg-img: image-url('login_bg.jpg');
 $screen-sm-min: 768px;
 $login-bg-size: 100% auto;
 
 .login-pf {
   body {
-    background: $login-bg-color;
-
     .login-page {
-      background: $login-bg-color;
       background-image: $bg-img;
       background-size: $login-bg-size;
-      color: $login-color;
 
       #brand {
         top: -40px;

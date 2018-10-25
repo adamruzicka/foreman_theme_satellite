@@ -4,6 +4,10 @@
   height: inherit;
 }
 
+.navbar-brand-txt {
+  visibility: hidden;
+}
+
 .navbar .nav .org-switcher > a {
   font-size: 14px;
 
@@ -13,7 +17,5 @@
 }
 
 .navbar-brand img {
-  height: 10px;
   width: 141px;
-  margin-top: 13px;
 }
