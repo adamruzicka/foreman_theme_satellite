@@ -1,5 +1,5 @@
 .login-pf body {
-  background: #CC0000;
+  background: #393F44;
 }
 .nav-pf-vertical {
   background: #393F44;
@@ -17,10 +17,10 @@
   background-color: #393F44;
 }
 .auto-refresh.on {
-  color: #CC0000;
+  color: #393F44;
 }
 .login-pf body .login-page {
-  background: #CC0000;
+  background: #393F44;
 }
 .navbar .active > a,
 .navbar .open > a {
