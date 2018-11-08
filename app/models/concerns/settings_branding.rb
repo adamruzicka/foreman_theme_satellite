@@ -6,7 +6,7 @@ module SettingsBranding
       'email_reply_address' => "satellite-noreply@#{domain}",
       'email_subject_prefix' => '[satellite]',
 
-      'rss_url' => 'https://access.redhat.com/blogs/1169563/feed'
+      'rss_url' => 'https://www.redhat.com/en/rss/blog/channel/red-hat-satellite'
     }.freeze
   end
 
