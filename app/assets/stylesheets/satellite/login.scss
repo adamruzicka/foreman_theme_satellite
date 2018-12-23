@@ -4,9 +4,12 @@ $login-bg-size: 100% auto;
 
 .login-pf {
   body {
+    background-color: #393F44;
+
     .login-page {
       background-image: $bg-img;
       background-size: $login-bg-size;
+      background-color: #393F44;
 
       #brand {
         top: -40px;
