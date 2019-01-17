@@ -1,9 +1,10 @@
 @import "satellite/bastion.scss";
+@import "satellite/application_colors";
+@import "satellite/bundle_colors";
 @import "satellite/login.scss";
 @import "satellite/patternfly_and_overrides.scss";
 @import "satellite/topbar.scss";
 @import "satellite/wizard.scss";
-@import "satellite/bundle_colors";
 
 .avatar{
   &.small{
