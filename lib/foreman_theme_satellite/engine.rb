@@ -98,17 +98,41 @@ module ForemanThemeSatellite
 
   METADATA_PATH = '/usr/share/satellite/metadata.yml'.freeze
 
+  def self.metadata_field(key, default)
+    value = ENV["SATELLITE_#{key.upcase}"]
+    return value if value
+
+    metadata_path = Rails.env.production? ? METADATA_PATH : "#{__dir__}/../../config/metadata.yml"
+
+    @metadata_yaml ||= File.exist?(metadata_path) ? YAML.load_file(metadata_path) : {}
+    @metadata_yaml[key] || default
+  end
+
   def self.get_satellite_version
-    File.exist?(METADATA_PATH) ? YAML.load_file(METADATA_PATH)['version'] : "0.0.0-development"
+    metadata_field('version', '0.0.0-development')
   end
 
   def self.get_satellite_short_version
     Foreman::Version.new(SATELLITE_VERSION).short
   end
 
-  #this file indicates the satellite version that will be represented on the login page.
-  SATELLITE_VERSION = self.get_satellite_version
+  def self.documentation_server
+    @documentation_server ||= metadata_field('documentation_server', 'https://access.redhat.com')
+  end
 
-  #this file indicates the satellite version that will be used on links to documentation.
-  SATELLITE_SHORT_VERSION = self.get_satellite_short_version
+  def self.documentation_version
+    @documentation_version ||= metadata_field('documentation_version', ForemanThemeSatellite::SATELLITE_SHORT_VERSION)
+  end
+
+  def self.documentation_root
+    @documentation_root ||= begin
+      "#{documentation_server}/documentation/en-us/red_hat_satellite/#{documentation_version}/html"
+    end
+  end
+
+  # this file indicates the satellite version that will be represented on the login page.
+  SATELLITE_VERSION = get_satellite_version
+
+  # this file indicates the satellite version that will be used on links to documentation.
+  SATELLITE_SHORT_VERSION = get_satellite_short_version
 end
