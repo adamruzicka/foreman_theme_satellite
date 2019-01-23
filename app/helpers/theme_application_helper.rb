@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/LineLength
+# Overrides for functions used in helpers.
 module ThemeApplicationHelper
 
   USER_GUIDE_DICTIONARY = {
@@ -10,7 +14,7 @@ module ThemeApplicationHelper
     "FactsandtheENC" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/puppet_guide/chap-red_hat_satellite-puppet_guide-storing_and_maintaining_host_information#sect-Red_Hat_Satellite-Puppet_Guide-Storing_and_Maintaining_Host_Information-Using_Facter_and_Facts",
     "Architectures" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide/configuring_provisioning_resources#Configuring_Provisioning_Resources-Architectures",
     "Provisioning" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide/",
-    "PuppetReports" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-using_the_red_hat_satellite_content_dashboard",
+    "PuppetReports" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-monitoring_resources#chap-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Using_the_Red_Hat_Satellite_Content_Dashboard",
     "Realm" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-configuring_external_authentication#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Configuring_External_Authentication-External_Authentication_for_Provisioned_Hosts",
     "Searching" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-searching_and_bookmarking",
     "InstallationMedia" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide/configuring_provisioning_resources#Configuring_Provisioning_Resources-Creating_Installation_Media",
@@ -29,7 +33,7 @@ module ThemeApplicationHelper
     "LibvirtNote" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide/provisioning_virtual_machines_in_kvm",
     "EC2" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide/provisioning_cloud_instances_in_amazon_ec2",
     "GoogleComputeEngineNotes" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide",
-    "ComputeResources" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide/understanding_provisioning_basics",
+    "ComputeResources" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/provisioning_guide",
     "SmartProxies" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/installation_guide/installing_capsule_server",
     "SmartVariables" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/puppet_guide/chap-red_hat_satellite-puppet_guide-adding_puppet_modules_to_red_hat_satellite_6#sect-Red_Hat_Satellite-Puppet_Guide-Adding_Puppet_Modules_to_Red_Hat_Satellite_6-Configuring_Smart_Variables",
     "ConfigurationOptions" => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/administering_red_hat_satellite/",
@@ -41,22 +45,22 @@ module ThemeApplicationHelper
   }
 
   def association_text()
-    content_tag(:p, _("When editing a Template, you must assign a list of Operating Systems with which this Template can be used. Optionally, you can restrict a template to a list of Hostgroups or Environments.")) +
-      content_tag(:p, _("When a Host requests a template (e.g. during provisioning), Foreman selects the optimal match from the available templates of that type, in the following order:")) +
+    content_tag(:p, _('When editing a Template, you must assign a list of Operating Systems with which this Template can be used. Optionally, you can restrict a template to a list of Hostgroups or Environments.')) +
+      content_tag(:p, _('When a Host requests a template (e.g. during provisioning), Foreman selects the optimal match from the available templates of that type, in the following order:')) +
       (content_tag :ul do
-        content_tag(:li, _("Host group and Environment"))
-        content_tag(:li, _("Host group only"))
-        content_tag(:li, _("Environment only"))
-        content_tag(:li, _("Operating system default"))
+        content_tag(:li, _('Host group and Environment'))
+        content_tag(:li, _('Host group only'))
+        content_tag(:li, _('Environment only'))
+        content_tag(:li, _('Operating system default'))
       end)
-    (_("The final entry, Operating System default, can be set by editing the %s page.") % (link_to _("Operating System"), operatingsystems_path)).html_safe
+    (_('The final entry, Operating System default, can be set by editing the %s page.') % (link_to _('Operating System'), operatingsystems_path)).html_safe
   end
 
   def documentation_url(section = nil, _ = {})
-    url = ""
+    url = ''
     # this version string can be changed if needed.
     unless section.nil?
-      USER_GUIDE_DICTIONARY.each do |key,val|
+      USER_GUIDE_DICTIONARY.each do |key, val|
         url = val if section.include? key
       end
     end
@@ -66,3 +70,4 @@ module ThemeApplicationHelper
     url
   end
 end
+# rubocop:enable Metrics/LineLength
