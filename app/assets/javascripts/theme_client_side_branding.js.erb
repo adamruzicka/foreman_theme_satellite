@@ -7,10 +7,18 @@ branded_words.push([new RegExp("<%= exp.source.gsub('\\', '\\\\\\') %>", "g"), "
 
 function brand_string(string){
   result = string;
-  branded_words.forEach(function(tuple){
-    regex = tuple[0];
-    value = tuple[1];
-    result = result.replace(regex, value);
+  branded_words.some(function(tuple){
+    var regex = tuple[0];
+    var value = tuple[1];
+
+    parts = string.split(regex)
+    if (parts.length > 1) {
+      parts = parts.map(function(part) {
+        return brand_string(part)
+      })
+      result = parts.join(value)
+    }
+    return parts.length > 1;
   });
   return result;
 }
