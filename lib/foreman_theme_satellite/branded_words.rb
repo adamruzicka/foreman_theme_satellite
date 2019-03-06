@@ -5,7 +5,11 @@ module ForemanThemeSatellite
   # The server just uses the list as is.
   # The client is consuming it by generated .js.erb file: app/assets/javascripts/theme_client_side_branding.js.erb.
   # For now, modifiers are not supported by the generator.
+  # Make sure the regexp works both with Ruby and JavaScript.
+  # Entries are processed in order and first wins.
   FOREMAN_BRAND = {
+    /%{proxy}/               => '%{proxy}',
+    /%{foreman}/             => '%{foreman}',
     /\bHTTP Proxy\b(?!-)/    => 'HTTP Proxy',
     /\bHTTP proxy\b(?!-)/    => 'HTTP Proxy',
     /\b[Hh][Tt][Tt][Pp] [Pp]roxies\b(?!-)/ => 'HTTP Proxies',
