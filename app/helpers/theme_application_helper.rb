@@ -8,7 +8,6 @@ module ThemeApplicationHelper
     'using-config-groups' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-using_config_groups_to_manage_puppet_classes",
     'SmartMatchers' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-adding_puppet_modules_to_red_hat_satellite_6#sect-Red_Hat_Satellite-Puppet_Guide-Adding_Puppet_Modules_to_Red_Hat_Satellite_6-Configuring_Smart_Class_Parameters",
     'ImportingRoles' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles",
-    'GettingHelp' => "#{ForemanThemeSatellite.documentation_server}/products/red-hat-satellite/#support",
     'ForemanRemoteExecution' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Executing_Remote_Jobs",
     'ExecutingaJob' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Executing_Remote_Jobs",
     'JobTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Setting_up_Job_Templates",
@@ -42,6 +41,7 @@ module ThemeApplicationHelper
     'Environments' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/",
     'Bookmarks' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-searching_and_bookmarking#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Searching_and_Bookmarking-Bookmarking",
     'NoVNC' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_virtual_machines_in_kvm#Provisioning_Virtual_Machines_in_KVM-Configuring_noVNC",
+    'HTTP(S)Proxy' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_cloud_instances_in_amazon_ec2#Provisioning_Cloud_Instances_in_Amazon_EC2-Using-an-HTTP-Smart-Proxy",
     'GettingHelp' => "https://access.redhat.com/products/red-hat-satellite/#support"
   }.freeze
 
