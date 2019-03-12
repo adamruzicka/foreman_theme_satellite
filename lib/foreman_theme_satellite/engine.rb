@@ -23,7 +23,6 @@ module ForemanThemeSatellite
             f.split(File::SEPARATOR, 4).last
           end
         end
-    assets_to_precompile << 'theme_client_side_branding.js'
     assets_to_precompile << 'theme.css'
 
     if ENV['ENABLE_PRY_RACK'] == 'true'
