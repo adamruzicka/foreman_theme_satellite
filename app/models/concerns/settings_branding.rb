@@ -6,7 +6,8 @@ module SettingsBranding
       'email_reply_address' => "satellite-noreply@#{domain}",
       'email_subject_prefix' => '[satellite]',
 
-      'rss_url' => 'https://www.redhat.com/en/rss/blog/channel/red-hat-satellite'
+      'rss_url' => 'https://www.redhat.com/en/rss/blog/channel/red-hat-satellite',
+      'foreman_tasks_troubleshooting_url' => 'https://access.redhat.com/solutions/satellite6-tasks#%{label}'
     }.freeze
   end
 
