@@ -23,10 +23,10 @@ function brand_string(string){
   return result;
 }
 
-i18n.original_jed = i18n.dcnpgettext
+tfm.i18n.jed.original_dcnp = tfm.i18n.jed.dcnpgettext
 
-i18n.dcnpgettext = function( domain, context, singular_key, plural_key, val ) {
-  translated = i18n.original_jed( domain, context, singular_key, plural_key, val );
+tfm.i18n.jed.dcnpgettext = function( domain, context, singular_key, plural_key, val ) {
+  translated = tfm.i18n.jed.original_dcnp( domain, context, singular_key, plural_key, val );
 
   return brand_string(translated);
 }
