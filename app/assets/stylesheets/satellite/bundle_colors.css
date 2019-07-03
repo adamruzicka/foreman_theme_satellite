@@ -14,11 +14,11 @@
   background-color: #393F44 !important;
 }
 .nav-pf-vertical .list-group .list-group-item a:hover {
-  background-color: #474C51;
+  background-color: #474C51 !important;
 }
 .nav-pf-vertical .list-group .list-group-item:hover a {
   background-color: #474C51 !important;
 }
 .nav-pf-vertical .list-group .list-group-item.active a {
-  background-color: #474C51;
+  background-color: #474C51 !important;
 }
