@@ -36,6 +36,9 @@ module ForemanThemeSatellite
       Setting.singleton_class.prepend SettingsBranding::ClassMethods
     end
 
+    initializer 'foreman_theme_satellite.bastion_katello_overrides', :before => :build_middleware_stack do |app|
+      app.middleware.use ::ActionDispatch::Static, "#{ForemanThemeSatellite::Engine.root}/app/assets/javascripts/views"
+    end
 
     initializer 'foreman_theme_satellite.register_gettext', :after => :load_config_initializers do
       locale_dir = File.join(File.expand_path('../../..', __FILE__), 'locale')
