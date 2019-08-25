@@ -30,12 +30,6 @@ Deface::Override.new(:virtual_path  => "home/_topbar",
                      :surround      => "erb[loud]:contains('image_tag')",
                      :text          => "<%= link_to main_app.root_path do%><%= render_original %><% end %>")
 
-Deface::Override.new(:virtual_path  => "users/extlogout",
-                     :name          => "change version for the external logout page",
-                     # p#version
-                     :replace       => "div.details p:last",
-                     :text          => '<p><%= _("Version %{version}") % {:version => ForemanThemeSatellite::SATELLITE_VERSION} %></p>')
-
 Deface::Override.new(:virtual_path  => "about/index",
                      :name          => "change about page content",
                      # div#support

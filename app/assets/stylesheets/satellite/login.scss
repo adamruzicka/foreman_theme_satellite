@@ -1,17 +1,32 @@
 $bg-img: image-url('login_bg.svg');
-$login-bg-size: 55% auto;
+$bg-size: 55% auto;
+$bg-color: #202020;
+$bg-repeat: no-repeat;
+$brand-margin: 150px 15% 0 0;
+$brand-max-width: none;
 
-.login-page {
+.login-page { 
    .login-pf {
     background-image: $bg-img;
-    background-size: $login-bg-size;
-    background-color: #202020;
-    background-repeat: no-repeat;
+    background-size: $bg-size;
+    background-color: $bg-color;
+    background-repeat: $bg-repeat;
+  }
 
-    .login-pf-brand {
-      margin-top: 150px;
-      margin-right: 15%;
-      max-width: none;
+  .login-pf-brand {
+    margin: $brand-margin;
+    max-width: $brand-max-width;
+  }
+
+  .external-logout {
+    background-image: $bg-img;
+    background-size: $bg-size;
+    background-color: $bg-color;
+    background-repeat: $bg-repeat;
+    
+    header img.brand {
+      margin: $brand-margin !important;
+      max-width: $brand-max-width !important;
     }
   }
 }
