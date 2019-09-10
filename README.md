@@ -119,6 +119,28 @@ USER_GUIDE_DICTIONARY = {
     }
 ```
 
+#### Testing documentation
+
+Since the lifecycle of our documentation differs from Satellite's, there is need
+to test the links against different documentation version or instance.
+
+These parameters are cofigurable by either setting `ENV` variables:
+
+``` sh
+SATELLITE_DOCUMENTATION_SERVER=http://access.redhat.com
+SATELLITE_DOCUMENTATION_VERSION=6.6
+```
+
+Another option is to add or change keys in `/usr/share/satellite/metadata.yml`:
+
+``` yaml
+documentation_server: "http://access.redhat.com"
+documentation_version: "6.6"
+```
+
+There is also an automatic test that tests all documentation links on each PR,
+for the test to work [`metadata.yml`](https://gitlab.sat.engineering.redhat.com/satellite6/foreman_theme_satellite/blob/master/config/metadata.yml) should be updated 
+accordingly.
 
 ### Versioning:
 
