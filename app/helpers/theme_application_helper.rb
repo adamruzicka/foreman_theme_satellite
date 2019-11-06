@@ -7,8 +7,9 @@ module ThemeApplicationHelper
   USER_GUIDE_DICTIONARY = {
     'using-config-groups' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-using_config_groups_to_manage_puppet_classes",
     'SmartMatchers' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-adding_puppet_modules_to_red_hat_satellite_6#sect-Red_Hat_Satellite-Puppet_Guide-Adding_Puppet_Modules_to_Red_Hat_Satellite_6-Configuring_Smart_Class_Parameters",
-    'ImportingRoles' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles",
-    'ForemanRemoteExecution' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Executing_Remote_Jobs",
+    'ImportingRoles' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Importing_Ansible_Roles",
+    'Variables' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Creating_Ansible_Variables",
+    'ForemanRemoteExecution' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Configuring_and_Running_Remote_Commands",
     'ExecutingaJob' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Executing_Remote_Jobs",
     'JobTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-running_remote_jobs_on_hosts#sect-Managing_Hosts-Setting_up_Job_Templates",
     'FactsandtheENC' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-storing_and_maintaining_host_information#sect-Red_Hat_Satellite-Puppet_Guide-Storing_and_Maintaining_Host_Information-Using_Facter_and_Facts",
@@ -31,9 +32,9 @@ module ThemeApplicationHelper
     'OpenStackNotes' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_cloud_instances_in_red_hat_openstack_platform",
     'LibvirtNote' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_virtual_machines_in_kvm",
     'EC2' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_cloud_instances_in_amazon_ec2",
-    'GoogleComputeEngineNotes' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide",
+    'GoogleComputeEngineNotes' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_virtual_machines_in_gce",
     'ComputeResources' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/introduction#Introduction-Defining_Provisioning_Types",
-    'SmartProxies' => "#{ForemanThemeSatellite.documentation_root}/installing_capsule_server",
+    'SmartProxies' => "#{ForemanThemeSatellite.documentation_root}/planning_for_red_hat_satellite_6/chap-documentation-architecture_guide-capsule_server_overview",
     'SmartVariables' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-adding_puppet_modules_to_red_hat_satellite_6#sect-Red_Hat_Satellite-Puppet_Guide-Adding_Puppet_Modules_to_Red_Hat_Satellite_6-Configuring_Smart_Variables",
     'ConfigurationOptions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/",
     'Trends' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-monitoring_resources#monitoring_trends",
@@ -41,9 +42,12 @@ module ThemeApplicationHelper
     'Environments' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-adding_puppet_modules_to_red_hat_satellite_6#sect-Red_Hat_Satellite-Puppet_Guide-Puppet_Environments",
     'Bookmarks' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-searching_and_bookmarking#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Searching_and_Bookmarking-Bookmarking",
     'NoVNC' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_provisioning_resources#Configuring_Provisioning_Resources-Accessing_Virtual_Machines_with_the_noVNC_Console",
-    'HTTP(S)Proxy' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_cloud_instances_in_amazon_ec2#Provisioning_Cloud_Instances_in_Amazon_EC2-Using-an-HTTP-Smart-Proxy",
+    'HTTP(S)Proxy' => "#{ForemanThemeSatellite.documentation_root}/installing_satellite_server_from_a_connected_network/performing_additional_configuration_on_satellite_server#configuring_satellite_http_proxy",
     'GettingHelp' => "https://access.redhat.com/products/red-hat-satellite/#support",
-    'Policydeploymentoptions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-security_compliance_management#creating-a-complicance-policy_assembly"
+    'Policydeploymentoptions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-security_compliance_management#creating-a-complicance-policy_assembly",
+    'Auditing' => "#{ForemanThemeSatellite.documentation_root}/planning_for_red_hat_satellite_6/appe-red_hat_satellite-architecture_guide-glossary_of_terms#varl-Glossary_of_Terms-Audits",
+    'ReportTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-generating_host_monitoring_reports",
+    'UsingComputeProfiles' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_provisioning_resources#Configuring_Provisioning_Resources-Creating_Compute_Profiles"
   }.freeze
 
   def association_text()
@@ -67,7 +71,7 @@ module ThemeApplicationHelper
       end
     end
     if url.empty?
-      url = "#{ForemanThemeSatellite.documentation_root}/managing_hosts"
+      url = "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite"
     end
     url
   end
