@@ -42,7 +42,8 @@ module ThemeApplicationHelper
     'Bookmarks' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-searching_and_bookmarking#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Searching_and_Bookmarking-Bookmarking",
     'NoVNC' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_provisioning_resources#Configuring_Provisioning_Resources-Accessing_Virtual_Machines_with_the_noVNC_Console",
     'HTTP(S)Proxy' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_cloud_instances_in_amazon_ec2#Provisioning_Cloud_Instances_in_Amazon_EC2-Using-an-HTTP-Smart-Proxy",
-    'GettingHelp' => "https://access.redhat.com/products/red-hat-satellite/#support"
+    'GettingHelp' => "https://access.redhat.com/products/red-hat-satellite/#support",
+    'Policydeploymentoptions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-security_compliance_management#creating-a-complicance-policy_assembly"
   }.freeze
 
   def association_text()
