@@ -46,7 +46,7 @@ module ThemeApplicationHelper
     'GettingHelp' => "https://access.redhat.com/products/red-hat-satellite/#support",
     'Policydeploymentoptions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-security_compliance_management#creating-a-complicance-policy_assembly",
     'Auditing' => "#{ForemanThemeSatellite.documentation_root}/planning_for_red_hat_satellite_6/appe-red_hat_satellite-architecture_guide-glossary_of_terms#varl-Glossary_of_Terms-Audits",
-    'ReportTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/chap-managing_hosts-generating_host_monitoring_reports",
+    'ReportTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/monitoring_hosts#chap-Managing_Hosts-Generating_Host_Monitoring_Reports",
     'UsingComputeProfiles' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_provisioning_resources#Configuring_Provisioning_Resources-Creating_Compute_Profiles"
   }.freeze
 
