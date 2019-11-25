@@ -5,11 +5,8 @@ $bg-repeat: no-repeat;
 $brand-margin: 150px 15% 0 0;
 $brand-max-width: none;
 
-.login-page {
-  background-image: none;
-  background-color: $bg-color;
-
-   .login-pf {
+#login-page { 
+  .login-pf {
     background-image: $bg-img;
     background-size: $bg-size;
     background-color: $bg-color;
