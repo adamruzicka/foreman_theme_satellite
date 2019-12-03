@@ -84,11 +84,13 @@ module ForemanThemeSatellite
       begin
         assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
         # Include your monkey-patches over here
+        ComputeResource.singleton_class.send :prepend, ComputeResourceBranding::ClassMethods
         Foreman::Model::Openstack.send :include, Openstack
         Foreman::Model::Ovirt.send :include, Ovirt
         Realm.send :include, RealmTheme
         Setting.send :include, SettingsBranding
         Katello::Ping.send :include, SatellitePackages
+
       rescue => e
         puts "ForemanThemeSatellite: skipping engine hook (#{e})"
       end
