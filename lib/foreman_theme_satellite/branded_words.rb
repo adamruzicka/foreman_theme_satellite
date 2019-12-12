@@ -21,6 +21,7 @@ module ForemanThemeSatellite
     /\bURL of the proxy\b(?!-)/ => 'URL of the proxy',
     %r{\bhttps://proxy.example.com:8080\b(?!-)} => 'https://proxy.example.com:8080',
     /\bproxy for all outgoing HTTP connections\b(?!-)/ => 'proxy for all outgoing HTTP connections',
+    /\b\perform various actions through those proxies\b(?!-)/ => 'perform various actions through those proxies',
     /\bForeman\b(?!-)/       => 'Satellite',
     /\bforeman\b(?!-)/       => 'satellite',
     /\bsmart-proxy\b(?!-)/   => 'capsule',
