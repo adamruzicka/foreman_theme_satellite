@@ -1,7 +1,15 @@
 <li>
   <p translate>Enable satellite-tools repository if you want to use client tools such as katello-agent or puppet:</p>
 
-  <pre><code>subscription-manager repos --enable=rhel-\*-satellite-tools-\*-rpms</code></pre>
+  <p translate>For Red Hat Enterprise Linux 8 and newer:</p>
+  <pre><code>subscription-manager repos --enable=satellite-tools-$SATELLITE_VERSION-for-rhel-$RHEL_MAJOR_VERSION-x86_64-rpms</code></pre>
+  <p translate>For example:</p>
+  <pre><code>subscription-manager repos --enable=satellite-tools-6.7-for-rhel-8-x86_64-rpms</code></pre>
+
+  <p translate>For Red Hat Enterprise Linux 7 and older:</p>
+  <pre><code>subscription-manager repos --enable=rhel-$RHEL_MAJOR_VERSION-server-satellite-tools-$SATELLITE_VERSION-rpms</code></pre>
+  <p translate>For example:</p>
+  <pre><code>subscription-manager repos --enable=rhel-7-server-satellite-tools-6.7-rpms</code></pre>
 </li>
 
 <ng-include src="'content-hosts/views/register-client.html'"></ng-include>
