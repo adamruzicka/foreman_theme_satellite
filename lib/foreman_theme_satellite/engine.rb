@@ -93,6 +93,8 @@ module ForemanThemeSatellite
         Realm.send :include, RealmTheme
         Setting.send :include, SettingsBranding
         Katello::Ping.send :include, SatellitePackages
+        UINotifications::StringParser.send :prepend, DeprecationNotification::StringParser
+        Notification.singleton_class.send :prepend, DeprecationNotification::Notification
 
       rescue => e
         puts "ForemanThemeSatellite: skipping engine hook (#{e})"
