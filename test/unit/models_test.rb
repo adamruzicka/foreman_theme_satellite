@@ -1,7 +1,6 @@
 require 'test_plugin_helper'
 
 class ModelsTest < ActiveSupport::TestCase
-
   test "check openstack friendly name" do
     assert_equal Foreman::Model::Openstack::provider_friendly_name, "RHEL OpenStack Platform", "Friendly name override was unsuccessful"
   end
@@ -12,5 +11,9 @@ class ModelsTest < ActiveSupport::TestCase
 
   test "check realms types" do
     assert_equal Realm::TYPES, ["Red Hat Identity Management", "Active Directory"]
+  end
+
+  test "check GCE adds RHEL image family as default filter for available images" do
+    assert_equal ['rhel'], Foreman::Model::GCE::image_families_to_filter
   end
 end
