@@ -82,6 +82,10 @@ module ForemanThemeSatellite
       end
     end
 
+    initializer 'foreman_theme_satellite.prepend_gce_class_method' do |app|
+      Foreman::Model::GCE.singleton_class.send :prepend, GCE::ClassMethods
+    end
+
     # Include concerns in this config.to_prepare block
     config.to_prepare do
       begin
@@ -95,7 +99,6 @@ module ForemanThemeSatellite
         Katello::Ping.send :include, SatellitePackages
         UINotifications::StringParser.send :prepend, DeprecationNotification::StringParser
         Notification.singleton_class.send :prepend, DeprecationNotification::Notification
-
       rescue => e
         puts "ForemanThemeSatellite: skipping engine hook (#{e})"
       end
