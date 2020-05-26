@@ -1,4 +1,4 @@
 ---
 version: '6.7.000'
 documentation_server: 'https://access.redhat.com'
-documentation_version: '6.7-beta'
+documentation_version: '6.7'
