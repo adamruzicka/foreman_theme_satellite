@@ -11,7 +11,7 @@ class DocumentationLinksTest < ActiveSupport::TestCase
     WebMock.disable_net_connect!
   end
 
-  ThemeApplicationHelper::USER_GUIDE_DICTIONARY.each do |key, doc_address|
+  ForemanThemeSatellite::Documentation::USER_GUIDE_DICTIONARY.each do |key, doc_address|
     test "#{key} entry is valid" do
       uri = URI(doc_address)
       res = Net::HTTP.get_response(uri)

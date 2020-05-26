@@ -108,10 +108,10 @@ Documentation override was made using this method
 
 ### Documentation:
 
-Foreman's documentation is processed through `#documentation_url` function,
-by overriding it from `app/helpers/theme_application_helper.rb` we change the documentation links.
-
-Connect each subject with relevant links: (this is the entry point for documentation team)
+All links to documentation in Foreman are local and redirected to `links_controller`.
+This controller is prepended with `documentation_controller_branding` concern that uses
+dictionary stored in `lib/foreman_theme_satellite/documentation.rb` to redirect documentation
+to downstream URLs.
 
 ```ruby
 USER_GUIDE_DICTIONARY = {
@@ -139,7 +139,7 @@ documentation_version: "6.6"
 ```
 
 There is also an automatic test that tests all documentation links on each PR,
-for the test to work [`metadata.yml`](https://gitlab.sat.engineering.redhat.com/satellite6/foreman_theme_satellite/blob/master/config/metadata.yml) should be updated 
+for the test to work [`metadata.yml`](https://gitlab.sat.engineering.redhat.com/satellite6/foreman_theme_satellite/blob/master/config/metadata.yml) should be updated
 accordingly.
 
 ### Versioning:
