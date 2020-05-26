@@ -1,6 +1,6 @@
 require 'rails/generators'
-require_relative '../../foreman_theme_satellite/css_compare'
-require_relative '../../foreman_theme_satellite/color_changer'
+require_relative 'lib/css_compare'
+require_relative 'lib/color_changer'
 
 module ForemanThemeSatellite
   class ColorDiffGenerator < Rails::Generators::Base
