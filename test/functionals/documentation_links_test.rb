@@ -1,4 +1,5 @@
 require 'test_plugin_helper'
+require_relative '../../lib/foreman_theme_satellite/documentation'
 
 require 'net/http'
 

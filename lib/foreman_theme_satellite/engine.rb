@@ -10,7 +10,6 @@ module ForemanThemeSatellite
     config.eager_load_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.eager_load_paths += Dir["#{config.root}/app/helpers"]
     config.eager_load_paths += Dir["#{config.root}/app/models/concerns"]
-    config.eager_load_paths += Dir["#{config.root}/lib"]
     engine_peth = config.root
 
     assets_to_override = ["#{engine_peth}/app/assets/images"]

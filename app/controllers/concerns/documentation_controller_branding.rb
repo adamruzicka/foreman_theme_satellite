@@ -1,3 +1,5 @@
+require_relative '../../../lib/foreman_theme_satellite/documentation'
+
 module DocumentationControllerBranding
   extend ActiveSupport::Concern
 
