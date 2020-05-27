@@ -41,7 +41,7 @@ module ForemanThemeSatellite
       'Environments' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-adding_puppet_modules_to_red_hat_satellite_6#sect-Red_Hat_Satellite-Puppet_Guide-Puppet_Environments",
       'Bookmarks' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-searching_and_bookmarking#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Searching_and_Bookmarking-Bookmarking",
       'NoVNC' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_provisioning_resources#Configuring_Provisioning_Resources-Accessing_Virtual_Machines_with_the_noVNC_Console",
-      'HTTP(S)Proxy' => "#{ForemanThemeSatellite.documentation_root}/installing_satellite_server_from_a_connected_network/performing_additional_configuration_on_satellite_server#configuring_satellite_http_proxy",
+      'HTTP(S)Proxy' => "#{ForemanThemeSatellite.documentation_root}/installing_satellite_server_from_a_connected_network/performing-additional-configuration#configuring-satellite-with-an-http-proxy_satellite",
       'GettingHelp' => "https://access.redhat.com/products/red-hat-satellite/#support",
       'Policydeploymentoptions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-security_compliance_management#creating-a-complicance-policy_assembly",
       'Auditing' => "#{ForemanThemeSatellite.documentation_root}/planning_for_red_hat_satellite_6/appe-red_hat_satellite-architecture_guide-glossary_of_terms#varl-Glossary_of_Terms-Audits",
