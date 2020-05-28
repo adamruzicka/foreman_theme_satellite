@@ -6,10 +6,10 @@ require 'deface'
 module ForemanThemeSatellite
   class Engine < ::Rails::Engine
     engine_name 'foreman_theme_satellite'
-    config.autoload_paths += Dir["#{config.root}/app/overrides"]
-    config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
-    config.autoload_paths += Dir["#{config.root}/app/helpers"]
-    config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
+    config.eager_load_paths += Dir["#{config.root}/app/overrides"]
+    config.eager_load_paths += Dir["#{config.root}/app/controllers/concerns"]
+    config.eager_load_paths += Dir["#{config.root}/app/helpers"]
+    config.eager_load_paths += Dir["#{config.root}/app/models/concerns"]
     engine_peth = config.root
 
     assets_to_override = ["#{engine_peth}/app/assets/images"]
@@ -96,9 +96,11 @@ module ForemanThemeSatellite
         Foreman::Model::Ovirt.send :include, Ovirt
         Realm.send :include, RealmTheme
         Setting.send :include, SettingsBranding
-        Katello::Ping.send :include, SatellitePackages
+        # Skip katello initialization, if katello module is not present (dev environments)
+        Katello::Ping.send :include, SatellitePackages if defined?(Katello)
         UINotifications::StringParser.send :prepend, DeprecationNotification::StringParser
         Notification.singleton_class.send :prepend, DeprecationNotification::Notification
+        LinksController.prepend DocumentationControllerBranding
       rescue => e
         puts "ForemanThemeSatellite: skipping engine hook (#{e})"
       end
