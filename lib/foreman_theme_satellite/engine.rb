@@ -92,6 +92,8 @@ module ForemanThemeSatellite
         assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
         # Include your monkey-patches over here
         ComputeResource.singleton_class.send :prepend, ComputeResourceBranding::ClassMethods
+        require_relative 'rss_checker_branding'
+        UINotifications::RssNotificationsChecker.send :prepend, RssCheckerBranding
         Foreman::Model::Openstack.send :include, Openstack
         Foreman::Model::Ovirt.send :include, Ovirt
         Realm.send :include, RealmTheme
