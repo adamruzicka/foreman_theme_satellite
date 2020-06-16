@@ -98,8 +98,13 @@ module ForemanThemeSatellite
         Foreman::Model::Ovirt.send :include, Ovirt
         Realm.send :include, RealmTheme
         Setting.send :include, SettingsBranding
+
         # Skip katello initialization, if katello module is not present (dev environments)
-        Katello::Ping.send :include, SatellitePackages if defined?(Katello)
+        if defined?(Katello)
+          Katello::Ping.send :include, SatellitePackages
+          Katello::Glue::Provider.send :include, DistributorVersion
+        end
+
         UINotifications::StringParser.send :prepend, DeprecationNotification::StringParser
         Notification.singleton_class.send :prepend, DeprecationNotification::Notification
         LinksController.prepend DocumentationControllerBranding
