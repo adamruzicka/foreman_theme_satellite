@@ -29,7 +29,7 @@ module ForemanThemeSatellite
       'RackspaceNotes' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide",
       'RHEVNotes' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_virtual_machines_in_red_hat_virtualization",
       'OpenStackNotes' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_cloud_instances_in_red_hat_openstack_platform",
-      'LibvirtNote' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_virtual_machines_in_kvm",
+      'LibvirtNote' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning-virtual-machines-in-kvm",
       'EC2' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_cloud_instances_in_amazon_ec2",
       'GoogleComputeEngineNotes' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning_virtual_machines_in_gce",
       'ComputeResources' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/introduction#Introduction-Defining_Provisioning_Types",
