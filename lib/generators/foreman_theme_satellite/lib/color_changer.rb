@@ -19,6 +19,7 @@ module ForemanThemeSatellite
     '#006289' => '#64686C',   # $selected_gradient_end
     # '#006289' => '#4b5053'  # $hover_gradient_end
     '#024d6c' => '#393F44',   # $nav-pf-vertical-bg-color
-    '#026991' => '#474C51'    # $nav-pf-vertical-active-bg-color
+    '#026991' => '#474C51',   # $nav-pf-vertical-active-bg-color
+    '#01749d' => '#202020'    # $topbar-default-color
   }.freeze
 end

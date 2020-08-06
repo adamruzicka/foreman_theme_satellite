@@ -60,7 +60,10 @@ module ForemanThemeSatellite
       Hash[
         props.reject { |c| c.is_a? Sass::Tree::CommentNode }.map do |prop|
           raise "property has too many names: #{prop.to_sass}" if prop.name.length > 1
-          [prop.name[0], prop.value.to_sass]
+          [
+            prop.name[0],
+            (prop.value[0].is_a? String)? prop.value[0] : prop.value[0].to_sass
+          ]
         end
       ]
     end

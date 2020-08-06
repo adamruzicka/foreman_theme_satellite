@@ -229,3 +229,10 @@ In order to brand translated strings too, the system assumes that the names will
 * git clone git@gitlab.sat.lab.tlv.redhat.com:satellite6/foreman_theme_satellite.git
 * add this plugin as a gem in your foreman gemfile.
 * to get the rails server to have satellite_branded strings, run `rake after_translation`
+
+## Convert Foreman colors to Satellite colors
+* For files in 'app/assets/...' run `rails assets:precompile`. The source path will be 'public/assets/application-ETag.css
+* For files in 'webpack/...' run `rake webpack:compile`. The source path will be 'public/webpack/bundle-ETag.css'
+* Run the following command in the foreman directory:  
+ `rails generate foreman_theme_satellite:color_diff --source_css PATH_TO_SOURCE_FILE --destination_file PATH_TO_DESTINATION_FILE`
+* Full list of converted colors can be found in: `color_changer.rb` 
