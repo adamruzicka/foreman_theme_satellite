@@ -1,0 +1,7 @@
+<!-- insert_top 'body' -->
+<%= react_component(
+      'Helmet',
+      titleTemplate: 'Red Hat Satellite - %s',
+      defaultTitle: 'Red Hat Satellite'
+    )
+%>
