@@ -14,16 +14,14 @@
     "url": "http://bugzilla.redhat.com/"
   },
   "peerDependencies": {
-    "@theforeman/vendor": ">= 4.0.2"
+    "@theforeman/vendor": "^4.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
-    "@theforeman/builder": "^4.13.2",
-    "@theforeman/eslint-plugin-foreman": "^4.13.2",
-    "@theforeman/test": "^4.13.2",
-    "@theforeman/vendor": "^4.13.2",
-    "@theforeman/vendor-core": "^4.13.2",
-    "@theforeman/vendor-dev": "^4.13.2",
+    "@theforeman/builder": "^4.12.0",
+    "@theforeman/eslint-plugin-foreman": "^4.12.0",
+    "@theforeman/test": "^4.12.0",
+    "@theforeman/vendor-dev": "^4.12.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "prettier": "^2.0.5",
