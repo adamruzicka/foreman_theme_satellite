@@ -39,6 +39,7 @@ Deface::Override.new(:virtual_path  => "about/index",
                                         <ul>
                                         <li><%= link_to _('Complete Product Documentation for Red Hat Satellite'),\"https://access.redhat.com/documentation/en/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}\", :rel => \"external\" %></li>
                                         <li><%= link_to _('API Resources'), apipie_apipie_path, :title => _('Automate Satellite via a simple and powerful API') %></li>
+                                        <li><%= link_to _('Templates DSL'), apipie_dsl_apipie_dsl_path, :title => _('Get DSL reference for templates writing') %></li>
                                         </ul>
                                         <h6><%= _(\"Blog\") %></h6>
                                         <ul>
