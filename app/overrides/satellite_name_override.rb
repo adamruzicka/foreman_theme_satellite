@@ -68,5 +68,16 @@ Deface::Override.new(:virtual_path  => "common/500",
                      :name          => "change 500 page content",
                      # p#message
                      :replace       => "p",
-                     :text          => "<p>\r\n  <%= _(\"If you feel this is an error with Satellite 6 itself, please open a new issue with\") %> <%= link_to _(\"Satellite ticketing system\"), \"https:\/\/access.redhat.com\/home\",
-                                       :rel => \"external\" %>,\r\n  <%= _(\"You would probably need to attach the\") %>\r\n  <%= link_to_function(_(\"Full trace\"), \"$(\'#backtrace\').toggle()\")%> <%= _(\"and relevant log entries.\") %>\r\n<\/p>")
+                     :text          => "<p id=\"message\">
+                                          <%= _(\"If you feel this is an error with Satellite itself, please open a new issue with\") %>
+                                          <%= link_to _(\"Satellite ticketing system\"), \"https://access.redhat.com/support/cases/#/case/new\", :rel => \"external\" %>,
+                                          <% if Foreman::Logging.config[:type] == \"file\" %>
+                                            <%= _(\"Please include in your report the full error log that can be acquired by running: \") %>
+                                            <strong> foreman-rake errors:fetch_log request_id=<%= request_id %></strong>
+                                          <% else %>
+                                            <%= _('Search your logs for request-id') %> <%= request_id %>.
+                                            <%= _('When using external logging, search for request UUID') %> <%= full_request_id %>
+                                          <% end %>
+                                            <%= _(\" and it is highly recommended to also attach the sosreport output.\") %>
+                                        </p>
+                     ")
