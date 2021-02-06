@@ -6,8 +6,8 @@ module ForemanThemeSatellite
     USER_GUIDE_DICTIONARY = {
       'using-config-groups' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-using_config_groups_to_manage_puppet_classes",
       'SmartMatchers' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-adding_puppet_modules_to_red_hat_satellite_6#sect-Red_Hat_Satellite-Puppet_Guide-Adding_Puppet_Modules_to_Red_Hat_Satellite_6-Configuring_Smart_Class_Parameters",
-      'ImportingRoles' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Importing_Ansible_Roles",
-      'Variables' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Creating_Ansible_Variables",
+      'ImportingRoles' => "#{ForemanThemeSatellite.documentation_root}/configuring_satellite_to_use_ansible/getting-started-with-ansible_ansible#importing-Ansible-variables_ansible",
+      'Variables' => "#{ForemanThemeSatellite.documentation_root}/configuring_satellite_to_use_ansible/getting-started-with-ansible_ansible#creating-Ansible-variables_ansible",
       'ForemanRemoteExecution' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/running_jobs_on_hosts",
       'ExecutingaJob' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/configuring-and-setting-up-remote-jobs_managing-hosts#configuring-the-global-smartproxy-remote-execution-setting_managing-hosts",
       'JobTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/running_jobs_on_hosts#sect-Managing_Hosts-Setting_up_Job_Templates",
