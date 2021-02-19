@@ -9,7 +9,7 @@ module ForemanThemeSatellite
       'ImportingRoles' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Importing_Ansible_Roles",
       'Variables' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-managing_ansible_roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Creating_Ansible_Variables",
       'ForemanRemoteExecution' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/running_jobs_on_hosts",
-      'ExecutingaJob' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/running_jobs_on_hosts#sect-Managing_Hosts-Configuring_and_Running_Remote_Commands",
+      'ExecutingaJob' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/configuring-and-setting-up-remote-jobs_managing-hosts#configuring-the-global-smartproxy-remote-execution-setting_managing-hosts",
       'JobTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/running_jobs_on_hosts#sect-Managing_Hosts-Setting_up_Job_Templates",
       'FactsandtheENC' => "#{ForemanThemeSatellite.documentation_root}/puppet_guide/chap-red_hat_satellite-puppet_guide-storing_and_maintaining_host_information#sect-Red_Hat_Satellite-Puppet_Guide-Storing_and_Maintaining_Host_Information-Using_Facter_and_Facts",
       'Architectures' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring-provisioning-resources#configuring-provisioning-resources-Architectures",
