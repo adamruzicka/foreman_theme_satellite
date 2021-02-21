@@ -4,7 +4,6 @@ require 'integration_test_helper'
 class AboutOverrideIntegrationTest < ActionDispatch::IntegrationTest
   test "about page" do
     visit about_index_path
-    assert_index_page(about_index_path,"About", nil, false, false)
     assert page.has_selector?('h4', :text => "System Status"), "System Status was expected in the <h4> tag, but was not found"
     assert page.has_selector?('h4', :text => "Support"), "Support was expected in the <h4> tag, but was not found"
     assert page.has_selector?('h4', :text => "System Information"), "System Information was expected in the <h4> tag, but was not found"
