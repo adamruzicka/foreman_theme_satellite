@@ -21,5 +21,8 @@ module DocumentationControllerBranding
     url
   end
 
+  def plugin_documentation_url
+    ForemanThemeSatellite::Documentation::PLUGINS_DOCUMENTATION[plugin_documentation_params[:name]] || super
+  end
 
 end

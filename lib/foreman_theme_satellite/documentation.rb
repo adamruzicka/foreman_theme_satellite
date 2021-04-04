@@ -48,5 +48,8 @@ module ForemanThemeSatellite
       'ReportTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/using_report_templates",
       'UsingComputeProfiles' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring-provisioning-resources#configuring-provisioning-resources-Creating_Compute_Profiles"
     }.freeze
+    PLUGINS_DOCUMENTATION = {
+      'azure' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning-cloud-instances-azure",
+    }.freeze
   end
 end
