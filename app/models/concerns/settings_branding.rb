@@ -8,7 +8,8 @@ module SettingsBranding
         'email_subject_prefix' => '[satellite]',
 
         'rss_url' => 'https://www.redhat.com/en/rss/blog/channel/red-hat-satellite',
-        'foreman_tasks_troubleshooting_url' => 'https://access.redhat.com/solutions/satellite6-tasks#%{label}'
+        'foreman_tasks_troubleshooting_url' => 'https://access.redhat.com/solutions/satellite6-tasks#%{label}',
+        'bootdisk_allowed_types' => '[subnet,full_host]'
       }.freeze
     end
 
