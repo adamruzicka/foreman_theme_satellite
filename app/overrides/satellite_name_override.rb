@@ -42,7 +42,7 @@ Deface::Override.new(:virtual_path  => "about/index",
                                         </ul>
                                         <h6><%= _(\"Blog\") %></h6>
                                         <ul>
-                                          <li><%= link_to _('Red Hat Satellite Blog'), \"https://access.redhat.com/blogs/1169563\", :rel => \"external\" %></li>
+                                          <li><%= link_to _('Red Hat Satellite Blog'), \"https://www.redhat.com/en/blog/channel/red-hat-satellite\", :rel => \"external\" %></li>
                                         </ul>
                                         <h6><%= _(\"IRC\") %></h6>
                                         <p><%= (_(\"You can find us on %{freenode} (irc.freenode.net) on #satellite6.\") % {:freenode => link_to(\"freenode\", \"http://www.freenode.net\", :rel => \"external\")}).html_safe  %></p>
