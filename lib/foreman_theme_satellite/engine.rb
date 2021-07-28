@@ -107,6 +107,10 @@ module ForemanThemeSatellite
           Katello::Glue::Provider.send :include, DistributorVersion
         end
 
+        if defined?(ForemanRhCloud)
+          ForemanRhCloud::BranchInfo.send :prepend, BranchInfoBranding
+        end
+
         UINotifications::StringParser.send :prepend, DeprecationNotification::StringParser
         Notification.singleton_class.send :prepend, DeprecationNotification::Notification
         LinksController.prepend DocumentationControllerBranding
