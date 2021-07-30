@@ -15,6 +15,7 @@ module ForemanThemeSatellite
     /\bHTTP\(S\) proxy\b(?!-)/ => 'HTTP(S) proxy',
     /\bIgnore Proxy\b(?!-)/  => 'Ignore Proxy',
     /\bIgnore proxy\b(?!-)/  => 'Ignore Proxy',
+    /\bSystem-wide proxies\b(?!-)/  => 'System-wide proxies',
     /\bLeave this blank if no proxy is used\b(?!-)/ => 'Leave this blank if no proxy is used',
     /\bbypass proxy settings\b(?!-)/ => 'bypass proxy settings',
     /\bURL of the proxy\b(?!-)/ => 'URL of the proxy',
