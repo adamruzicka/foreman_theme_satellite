@@ -50,6 +50,7 @@ module ForemanThemeSatellite
     }.freeze
     PLUGINS_DOCUMENTATION = {
       'foreman_azure' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning-cloud-instances-azure",
+      'foreman_discovery' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring-the-discovery-service",
     }.freeze
   end
 end
