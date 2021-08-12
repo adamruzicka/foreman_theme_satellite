@@ -1,16 +1,6 @@
-.navbar-brand {
-  height: inherit;
-}
-
-.navbar-brand-txt {
-  visibility: hidden;
-}
-
-.navbar .nav .org-switcher > a {
-  font-size: 14px;
-
-  .caret {
-    margin-left: 20px;
+.pf-c-page__header .navbar-brand {
+  span .navbar-brand-txt {
+    display: none
   }
 }
 
@@ -19,6 +9,6 @@
 }
 
 .navbar-pf-vertical {
+  border-top: #202020;
   background: #202020;
-  background-size: cover;
 }
