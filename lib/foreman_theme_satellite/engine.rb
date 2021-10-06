@@ -34,6 +34,7 @@ module ForemanThemeSatellite
 
     initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
       Setting.singleton_class.prepend SettingsBranding::ClassMethods
+      Foreman::SettingManager::CategoryMapper.prepend SettingsBranding::DSLOverride
     end
 
     initializer 'foreman_theme_satellite.bastion_katello_overrides', :before => :build_middleware_stack do |app|

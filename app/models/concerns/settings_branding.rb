@@ -27,4 +27,24 @@ module SettingsBranding
       super(opts)
     end
   end
+
+  module DSLOverride
+    extend ActiveSupport::Concern
+
+    def setting(name, default:, description:, full_name: nil, value: nil, collection: nil, encrypted: false, **options)
+      branded_default = Setting.branded_settings[name.to_s]
+      default = branded_default if branded_default
+
+      super(
+        name,
+        default: default,
+        description: description,
+        full_name: full_name,
+        value: value,
+        collection: collection,
+        encrypted: encrypted,
+        **options
+      )
+    end
+  end
 end
