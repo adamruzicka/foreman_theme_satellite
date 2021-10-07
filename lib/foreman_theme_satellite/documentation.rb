@@ -46,8 +46,8 @@ module ForemanThemeSatellite
       'Policydeploymentoptions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-red_hat_satellite-administering_red_hat_satellite-security_compliance_management#creating-a-complicance-policy_assembly",
       'Auditing' => "#{ForemanThemeSatellite.documentation_root}/planning_for_red_hat_satellite/appe-red_hat_satellite-architecture_guide-glossary_of_terms#varl-Glossary_of_Terms-Audits",
       'ReportTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/using_report_templates",
-      'UsingComputeProfiles' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring-provisioning-resources#configuring-provisioning-resources-Creating_Compute_Profiles",
-      'Networking' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_networking#Configuring_Networking-Adding_a_Domain_to_the_Satellite_Server"
+      'UsingComputeProfiles' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring-provisioning-resources#creating-compute-profiles_provisioning",
+      'Networking' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_networking#Configuring_Networking-Adding_a_Subnet_to_the_Satellite_Server",
     }.freeze
     PLUGINS_DOCUMENTATION = {
       'foreman_azure' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning-cloud-instances-azure",
