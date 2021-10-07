@@ -48,6 +48,7 @@ module ForemanThemeSatellite
       'ReportTemplates' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/using_report_templates",
       'UsingComputeProfiles' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring-provisioning-resources#creating-compute-profiles_provisioning",
       'Networking' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_networking#Configuring_Networking-Adding_a_Subnet_to_the_Satellite_Server",
+      'Reports' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/using_report_templates",
     }.freeze
     PLUGINS_DOCUMENTATION = {
       'foreman_azure' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning-cloud-instances-azure",
