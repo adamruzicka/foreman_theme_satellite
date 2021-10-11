@@ -50,9 +50,14 @@ module ForemanThemeSatellite
       'Networking' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_networking#Configuring_Networking-Adding_a_Subnet_to_the_Satellite_Server",
       'Reports' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/using_report_templates",
     }.freeze
+
     PLUGINS_DOCUMENTATION = {
       'foreman_azure' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/provisioning-cloud-instances-azure",
       'foreman_discovery' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring-the-discovery-service",
     }.freeze
+
+    SPECIAL_LINKS = [
+      [/docs\.theforeman\.org\/.*?\/Managing_Hosts\/.*?registering-a-host.*?managing-hosts/i, "#{ForemanThemeSatellite.documentation_root}/managing_hosts/Registering_Hosts#registering-a-host-to-project-using-the-global-registration-template_managing-hosts"],
+    ]
   end
 end

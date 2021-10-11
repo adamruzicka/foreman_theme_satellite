@@ -15,7 +15,9 @@ module DocumentationControllerBranding
       if (upstream_url =~ /redhat.com/)
         url = upstream_url
       else
-        url = "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite"
+        special_links_pair = ForemanThemeSatellite::Documentation::SPECIAL_LINKS.find { |regex, _val| regex.match(upstream_url) }
+        url = special_links_pair[1] if special_links_pair
+        url = "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite" if url.empty?
       end
     end
     url
