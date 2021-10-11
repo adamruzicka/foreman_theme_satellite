@@ -35,6 +35,7 @@ module ForemanThemeSatellite
     initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
       Setting.singleton_class.prepend SettingsBranding::ClassMethods
       Foreman::SettingManager::CategoryMapper.prepend SettingsBranding::DSLOverride
+      Setting::Provisioning.singleton_class.prepend SettingsBranding::ProvisioningExtension
     end
 
     initializer 'foreman_theme_satellite.bastion_katello_overrides', :before => :build_middleware_stack do |app|
@@ -115,6 +116,8 @@ module ForemanThemeSatellite
         UINotifications::StringParser.send :prepend, DeprecationNotification::StringParser
         Notification.singleton_class.send :prepend, DeprecationNotification::Notification
         LinksController.prepend DocumentationControllerBranding
+        ProvisioningTemplatesController.include ProvisioningTemplatesControllerBranding
+        ProvisioningTemplatesHelper.prepend ProvisioningTemplatesHelperBranding
       rescue => e
         puts "ForemanThemeSatellite: skipping engine hook (#{e})"
       end

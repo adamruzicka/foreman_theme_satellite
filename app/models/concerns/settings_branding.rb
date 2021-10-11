@@ -47,4 +47,17 @@ module SettingsBranding
       )
     end
   end
+
+  module ProvisioningExtension
+    def default_settings
+      super + [
+        set(
+          'show_unsupported_templates',
+          N_('Show unsupported provisioning templates. When enabled, all the avaiable templates will be shown. When disabled, Red Hat supported templates will be shown only'),
+          false,
+          N_('Show unsupported provisioning templates')
+        )
+      ]
+    end
+  end
 end
