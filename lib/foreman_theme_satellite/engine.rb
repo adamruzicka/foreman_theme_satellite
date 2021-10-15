@@ -10,9 +10,10 @@ module ForemanThemeSatellite
     config.eager_load_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.eager_load_paths += Dir["#{config.root}/app/helpers"]
     config.eager_load_paths += Dir["#{config.root}/app/models/concerns"]
-    engine_peth = config.root
+    config.eager_load_paths += Dir["#{config.root}/lib/foreman_theme_satellite"]
+    engine_path = config.root
 
-    assets_to_override = ["#{engine_peth}/app/assets/images"]
+    assets_to_override = ["#{engine_path}/app/assets/images"]
 
     # Precompile any JS or CSS files under app/assets/
     # If requiring files from each other, list them explicitly here to avoid precompiling the same
@@ -96,7 +97,7 @@ module ForemanThemeSatellite
         assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
         # Include your monkey-patches over here
         ComputeResource.singleton_class.send :prepend, ComputeResourceBranding::ClassMethods
-        require_relative 'rss_checker_branding'
+        require 'rss_checker_branding'
         UINotifications::RssNotificationsChecker.send :prepend, RssCheckerBranding
         Foreman::Model::Openstack.send :include, Openstack
         Foreman::Model::Ovirt.send :include, Ovirt
@@ -104,7 +105,7 @@ module ForemanThemeSatellite
         Setting.send :include, SettingsBranding
 
         # Skip katello initialization, if katello module is not present (dev environments)
-        if defined?(Katello)
+        if defined?(Katello::VERSION)
           Katello::Ping.send :include, SatellitePackages
           Katello::Glue::Provider.send :include, DistributorVersion
         end
@@ -119,7 +120,7 @@ module ForemanThemeSatellite
         ProvisioningTemplatesController.include ProvisioningTemplatesControllerBranding
         ProvisioningTemplatesHelper.prepend ProvisioningTemplatesHelperBranding
       rescue => e
-        puts "ForemanThemeSatellite: skipping engine hook (#{e})"
+        Rails.logger.error "ForemanThemeSatellite: skipping engine hook (#{e})\n#{e.backtrace.join("\n")}"
       end
     end
   end
