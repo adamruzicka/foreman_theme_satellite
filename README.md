@@ -398,6 +398,9 @@ module SatellitePackages
 end
 ```
 
+### Update the list of supported provisioning templates by Red Hat.
+When there is a new template (supported by downstream) added in the upstream repo, please don't forget to update this [constant](https://gitlab.sat.engineering.redhat.com/satellite6/foreman_theme_satellite/-/blob/master/app/controllers/concerns/provisioning_templates_controller_branding.rb#L4). You simply need to add the name of the new template to the array.
+
 ## Theme constants and metadata fields
 
 Currently the theme maintains a list of constants and metadata that is relevant
