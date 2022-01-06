@@ -36,7 +36,6 @@ module ForemanThemeSatellite
     initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
       Setting.singleton_class.prepend SettingsBranding::ClassMethods
       Foreman::SettingManager::CategoryMapper.prepend SettingsBranding::DSLOverride
-      Setting::Provisioning.singleton_class.prepend SettingsBranding::ProvisioningExtension
     end
 
     initializer 'foreman_theme_satellite.bastion_katello_overrides', :before => :build_middleware_stack do |app|
@@ -52,7 +51,21 @@ module ForemanThemeSatellite
 
     initializer 'foreman_theme_satellite.register_plugin', :before=> :finisher_hook do |app|
       Foreman::Plugin.register :foreman_theme_satellite do
-        requires_foreman '>= 1.10'
+        requires_foreman '>= 3.0'
+
+        settings do
+          category(:provisioning) do
+            setting('show_unsupported_templates',
+              type: :boolean,
+              default: false,
+              description: N_('Show unsupported provisioning templates. '\
+                              'When enabled, all the avaiable templates will be shown. '\
+                              'When disabled, Red Hat supported templates will be shown only'),
+              full_name: N_('Show unsupported provisioning templates')
+            )
+          end
+        end
+
          tests_to_skip ({
                         "ComputeResourceTest" => ["friendly provider name"],
                         "RealmIntegrationTest" => ["create new page"],
