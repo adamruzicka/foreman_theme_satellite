@@ -9,7 +9,7 @@ N_("API Guide")
 N_("Blog")
 N_('Red Hat Satellite Blog')
 N_("IRC")
-N_("You can find us on %{libera.chat} (irc.libera.chat) on #redhat-satellite.")
+N_("You can find us on %{liberachat} (irc.libera.chat) on #redhat-satellite.")
 N_("Version %{version} © %{year} Red Hat Inc.")
 N_("Includes %{system} © 2009-%{year} Paul Kelly and Ohad Levy")
 N_("If you feel this is an error with Satellite 6 itself, please open a new issue with")
@@ -46,7 +46,7 @@ Deface::Override.new(:virtual_path  => "about/index",
                                           <li><%= link_to _('Red Hat Satellite Blog'), \"https://www.redhat.com/en/blog/channel/red-hat-satellite\", :rel => \"external\" %></li>
                                         </ul>
                                         <h6><%= _(\"IRC\") %></h6>
-                                        <p><%= (_(\"You can find us on %{libera.chat} (irc.libera.chat) on #redhat-satellite.\") % {:libera.chat => link_to(\"libera.chat\", \"https:/libera.chat\", :rel => \"external\")}).html_safe  %></p>
+                                        <p><%= (_(\"You can find us on %{liberachat} (irc.libera.chat) on #redhat-satellite.\") % {:liberachat => link_to(\"libera.chat\", \"https:/libera.chat\", :rel => \"external\")}).html_safe  %></p>
                                         </div>")
 
 Deface::Override.new(:virtual_path  => "about/index",
