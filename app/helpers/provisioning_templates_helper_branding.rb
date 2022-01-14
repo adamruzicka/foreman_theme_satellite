@@ -1,5 +1,6 @@
 module ProvisioningTemplatesHelperBranding
   def link_to_if_authorized(name, options = {}, html_options = {})
+    return super unless name.is_a?(ProvisioningTemplate)
     return super unless ProvisioningTemplatesControllerBranding::SUPPORTED_PROVISIONING_TEMPLATES.include?(name.name)
 
     image_tag(
