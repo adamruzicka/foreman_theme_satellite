@@ -57,7 +57,7 @@ module ForemanThemeSatellite
           category(:provisioning) do
             setting('show_unsupported_templates',
               type: :boolean,
-              default: false,
+              default: true,
               description: N_('Show unsupported provisioning templates. '\
                               'When enabled, all the avaiable templates will be shown. '\
                               'When disabled, Red Hat supported templates will be shown only'),
@@ -116,6 +116,7 @@ module ForemanThemeSatellite
         Foreman::Model::Ovirt.send :include, Ovirt
         Realm.send :include, RealmTheme
         Setting.send :include, SettingsBranding
+        ProvisioningTemplate.send :include, Provisioning
 
         # Skip katello initialization, if katello module is not present (dev environments)
         if defined?(Katello::VERSION)
