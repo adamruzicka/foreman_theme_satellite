@@ -34,8 +34,7 @@ module ForemanThemeSatellite
     config.app_middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{config.root}/public")
 
     initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
-      Setting.singleton_class.prepend SettingsBranding::ClassMethods
-      Foreman::SettingManager::CategoryMapper.prepend SettingsBranding::DSLOverride
+      Foreman::SettingRegistry.prepend SettingsBranding
     end
 
     initializer 'foreman_theme_satellite.bastion_katello_overrides', :before => :build_middleware_stack do |app|
@@ -115,7 +114,6 @@ module ForemanThemeSatellite
         Foreman::Model::Openstack.send :include, Openstack
         Foreman::Model::Ovirt.send :include, Ovirt
         Realm.send :include, RealmTheme
-        Setting.send :include, SettingsBranding
         ProvisioningTemplate.send :include, Provisioning
 
         # Skip katello initialization, if katello module is not present (dev environments)
