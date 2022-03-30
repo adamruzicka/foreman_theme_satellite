@@ -48,7 +48,7 @@ module ForemanThemeSatellite
     /\bproxy\b(?!-)/         => 'Capsule',
     /\bProxies\b(?!-)/       => 'Capsules',
     /\bproxies\b(?!-)/       => 'Capsules',
-    /\bKatello 4.0\b(?!-)/       => 'Satellite 7.0',
+    /\bKatello 4.0\b(?!-)/       => 'Satellite 6.11',
     %r{https://theforeman.org/plugins/katello/(?!-)} => "https://access.redhat.com/documentation/en-us/red_hat_satellite/#{ForemanThemeSatellite::SATELLITE_SHORT_VERSION}/html/managing_hosts/registering_hosts#registering-a-host-to-satellite-using-the-bootstrap-script"
   }.freeze
 end
