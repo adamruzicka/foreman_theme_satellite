@@ -6,9 +6,9 @@ module DocumentationControllerBranding
   def documentation_url(section = nil, options = {})
     url = ''
     unless section.nil?
-      ForemanThemeSatellite::Documentation::USER_GUIDE_DICTIONARY.each do |key, val|
-        url = val if section.include? key
-      end
+      dictionary = ForemanThemeSatellite::Documentation::USER_GUIDE_DICTIONARY
+      matched_key = dictionary.keys.sort_by(&:length).reverse.find {|key| section.include? key}
+      url = dictionary[matched_key] if matched_key
     end
     if url.empty?
       upstream_url = super(section, options)
