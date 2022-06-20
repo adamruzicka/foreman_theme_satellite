@@ -49,6 +49,7 @@ module ForemanThemeSatellite
       'UsingComputeProfiles' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring-provisioning-resources#creating-compute-profiles_provisioning",
       'Networking' => "#{ForemanThemeSatellite.documentation_root}/provisioning_guide/configuring_networking#Configuring_Networking-Adding_a_Subnet_to_the_Satellite_Server",
       'Reports' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/using_report_templates",
+      'CreatingSCAPcontent' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/chap-administering-security_compliance_management#sect-Administering-Security_Compliance_Management_with_OpenSCAP-Configuring_SCAP_Content",
     }.freeze
 
     PLUGINS_DOCUMENTATION = {
