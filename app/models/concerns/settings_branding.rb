@@ -3,7 +3,6 @@ module SettingsBranding
   def branded_settings
     domain = SETTINGS[:domain]
     @branded_settings ||= {
-      'host_details_ui' => false,
       'email_reply_address' => "satellite-noreply@#{domain}",
       'email_subject_prefix' => '[satellite]',
 
