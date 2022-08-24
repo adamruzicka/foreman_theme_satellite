@@ -9,4 +9,10 @@ module ThemeLayoutHelper
 
     super
   end
+
+  def layout_data
+    super.merge(
+      logo: image_path("foreman_theme_satellite/header_logo.svg", :class => "header-logo")
+    )
+  end
 end

@@ -264,7 +264,7 @@ def login_props
     version: SETTINGS[:version].version,
     caption: Setting[:login_text],
     alerts: flash_inline,
-    logoSrc: image_path("login_logo.png"),
+    logoSrc: image_path("foreman_theme_satellite/login_logo.png"),
   }
 end
 
@@ -281,7 +281,7 @@ module ThemeLoginHelper
   def login_props
     super.merge(
       version: ForemanThemeSatellite::SATELLITE_VERSION,
-      logoSrc: image_path('login_logo.svg')
+      logoSrc: image_path('foreman_theme_satellite/login_logo.svg')
     )
   end
 end

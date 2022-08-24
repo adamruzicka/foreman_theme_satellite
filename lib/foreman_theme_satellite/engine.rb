@@ -24,7 +24,7 @@ module ForemanThemeSatellite
             f.split(File::SEPARATOR, 4).last
           end
         end
-    assets_to_precompile << 'theme.css'
+    assets_to_precompile << 'foreman_theme_satellite/theme.css'
 
     if ENV['ENABLE_PRY_RACK'] == 'true'
       require File.expand_path("../pry_rack.rb", __FILE__)
