@@ -61,20 +61,3 @@ if (typeof(angular) !== 'undefined') {
     ]);
   }]);
 }
-
-if (typeof(angular) !== 'undefined') {
-  var templateUrl = 'register-client-downstream.html'
-
-  angular.module('Bastion.content-hosts').directive('registerClient', function () {
-    return {
-      restrict: 'E',
-      templateUrl: templateUrl
-    };
-  });
-
-  angular.module('Bastion.content-hosts').decorator("registerClientDirective", function ($delegate) {
-    return [$delegate.find(function (item) {
-       return item.templateUrl === templateUrl
-    })];
-  });
-}
