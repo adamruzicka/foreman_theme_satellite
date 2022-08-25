@@ -26,13 +26,6 @@ module ForemanThemeSatellite
         end
     assets_to_precompile << 'foreman_theme_satellite/theme.css'
 
-    if ENV['ENABLE_PRY_RACK'] == 'true'
-      require File.expand_path("../pry_rack.rb", __FILE__)
-      config.app_middleware.insert_before(::ActionDispatch::Static, PryRack)
-    end
-
-    config.app_middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{config.root}/public")
-
     initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
       SettingRegistry.prepend SettingsBranding
     end
