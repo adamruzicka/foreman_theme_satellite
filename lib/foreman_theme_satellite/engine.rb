@@ -24,21 +24,10 @@ module ForemanThemeSatellite
             f.split(File::SEPARATOR, 4).last
           end
         end
-    assets_to_precompile << 'theme.css'
-
-    if ENV['ENABLE_PRY_RACK'] == 'true'
-      require File.expand_path("../pry_rack.rb", __FILE__)
-      config.app_middleware.insert_before(::ActionDispatch::Static, PryRack)
-    end
-
-    config.app_middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{config.root}/public")
+    assets_to_precompile << 'foreman_theme_satellite/theme.css'
 
     initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
       SettingRegistry.prepend SettingsBranding
-    end
-
-    initializer 'foreman_theme_satellite.bastion_katello_overrides', :before => :build_middleware_stack do |app|
-      app.middleware.use ::ActionDispatch::Static, "#{ForemanThemeSatellite::Engine.root}/app/assets/javascripts/views"
     end
 
     initializer 'foreman_theme_satellite.register_gettext', :after => :load_config_initializers do
@@ -120,6 +109,7 @@ module ForemanThemeSatellite
         if defined?(Katello::VERSION)
           Katello::Ping.send :include, SatellitePackages
           Katello::Glue::Provider.send :include, DistributorVersion
+          Katello::LayoutHelper.send :include, ThemeLayoutHelper
         end
 
         if defined?(ForemanRhCloud)
