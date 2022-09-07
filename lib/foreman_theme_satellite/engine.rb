@@ -121,6 +121,7 @@ module ForemanThemeSatellite
         LinksController.prepend DocumentationControllerBranding
         ProvisioningTemplatesController.include ProvisioningTemplatesControllerBranding
         ProvisioningTemplatesHelper.prepend ProvisioningTemplatesHelperBranding
+        Setting.singleton_class.send :prepend, SettingBranding::ClassMethods
       rescue => e
         Rails.logger.error "ForemanThemeSatellite: skipping engine hook (#{e})\n#{e.backtrace.join("\n")}"
       end
