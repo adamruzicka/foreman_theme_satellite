@@ -1,6 +1,6 @@
 require 'test_plugin_helper'
 
-class SettingsBrandingTest < ActiveSupport::TestCase
+class SettingRegistryBrandingTest < ActiveSupport::TestCase
   describe 'stubbed creation' do
 
     test 'it replaces value to a branded one using DSL' do
