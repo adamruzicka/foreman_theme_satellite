@@ -1,5 +1,5 @@
 # Responsible for silently overwriting setting's default value.
-module SettingsBranding
+module SettingRegistryBranding
   def branded_settings
     domain = SETTINGS[:domain]
     @branded_settings ||= {

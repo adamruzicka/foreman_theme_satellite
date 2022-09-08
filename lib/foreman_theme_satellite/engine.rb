@@ -10,6 +10,7 @@ module ForemanThemeSatellite
     config.eager_load_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.eager_load_paths += Dir["#{config.root}/app/helpers"]
     config.eager_load_paths += Dir["#{config.root}/app/models/concerns"]
+    config.eager_load_paths += Dir["#{config.root}/app/services/concerns"]
     config.eager_load_paths += Dir["#{config.root}/lib/foreman_theme_satellite"]
     engine_path = config.root
 
@@ -27,7 +28,7 @@ module ForemanThemeSatellite
     assets_to_precompile << 'foreman_theme_satellite/theme.css'
 
     initializer 'foreman_theme_satellite.load_default_settings', :before => :load_config_initializers do |app|
-      SettingRegistry.prepend SettingsBranding
+      SettingRegistry.prepend SettingRegistryBranding
     end
 
     initializer 'foreman_theme_satellite.register_gettext', :after => :load_config_initializers do
