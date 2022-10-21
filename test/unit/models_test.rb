@@ -13,10 +13,6 @@ class ModelsTest < ActiveSupport::TestCase
     assert_equal Realm::TYPES, ["Red Hat Identity Management", "Active Directory"]
   end
 
-  test "check GCE adds RHEL image family as default filter for available images" do
-    assert_equal ['rhel'], Foreman::Model::GCE::image_families_to_filter
-  end
-
   test "check Setting.replace_keywords uses Satellite version" do
     assert_equal ForemanThemeSatellite::SATELLITE_VERSION, Setting.replace_keywords('$VERSION')
   end

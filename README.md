@@ -201,7 +201,7 @@ folder.
 will be `public/assets/application-ETag.css`
 * For files in `webpack/...` run `rake webpack:compile`. The source path will
 be `public/webpack/bundle-ETag.css`
-* Run the following command in the foreman directory:  
+* Run the following command in the foreman directory:
  `rails generate foreman_theme_satellite:color_diff --source_css <PATH_TO_SOURCE_FILE> --destination_file <PATH_TO_DESTINATION_FILE>`
 
 List of color conversion rules can be found in:
@@ -354,7 +354,6 @@ class ComputeResource < ApplicationRecord
       'EC2'       => 'Foreman::Model::EC2',
       'Vmware'    => 'Foreman::Model::Vmware',
       'Openstack' => 'Foreman::Model::Openstack',
-      'GCE'       => 'Foreman::Model::GCE',
     }
   end
   # ...

@@ -1,7 +1,7 @@
 module GCE
   module ClassMethods
-    def image_families_to_filter
-      @image_families_to_filter ||= ['rhel']
+    def filter_for_images
+      @filter_for_images ||= 'family = rhel*'
     end
   end
 end
