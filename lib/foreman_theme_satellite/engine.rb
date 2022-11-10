@@ -73,6 +73,7 @@ module ForemanThemeSatellite
         precompile_assets(assets_to_precompile)
 
         extend_rabl_template 'api/v2/home/status', 'api/v2/home/status_extensions'
+        extend_template_helpers ForemanThemeSatellite::RendererMethods
       end
     end
 
