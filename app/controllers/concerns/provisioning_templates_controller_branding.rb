@@ -49,6 +49,7 @@ module ProvisioningTemplatesControllerBranding
     'kickstart_networking_setup',
     'Kickstart oVirt-RHVH',
     'Kickstart oVirt-RHVH PXELinux',
+    'kickstart_rhsm',
     'Linux host_init_config default',
     'ntp',
     'puppet.conf',
