@@ -90,15 +90,12 @@ module ForemanThemeSatellite
       end
     end
 
-    initializer 'foreman_theme_satellite.prepend_gce_class_method' do |app|
-      Foreman::Model::GCE.singleton_class.send :prepend, GCE::ClassMethods
-    end
-
     # Include concerns in this config.to_prepare block
     config.to_prepare do
       begin
         assets_to_override.each { |path| Rails.application.config.assets.paths.unshift path }
         # Include your monkey-patches over here
+        ::ForemanGoogle::GCE.send(:prepend, GCE::ClassMethods) if Foreman::Plugin.installed?("foreman_google")
         ComputeResource.singleton_class.send :prepend, ComputeResourceBranding::ClassMethods
         require 'rss_checker_branding'
         UINotifications::RssNotificationsChecker.send :prepend, RssCheckerBranding
