@@ -45,6 +45,7 @@ module ForemanThemeSatellite
       # Administering
       'ConfigurationOptions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/",
       'PuppetReports' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/monitoring_resources_admin#Using_the_Project_Content_Dashboard_admin",
+      'Mail_Notifications' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/configuring_email_notifications_admin",
       'Realm' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/configuring_external_authentication_admin#External_Authentication_for_Provisioned_Hosts_admin",
       'Searching' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/searching_and_bookmarking_admin",
       'RolesandPermissions' => "#{ForemanThemeSatellite.documentation_root}/administering_red_hat_satellite/managing_users_and_roles_admin",

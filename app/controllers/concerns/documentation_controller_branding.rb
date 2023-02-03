@@ -27,4 +27,7 @@ module DocumentationControllerBranding
     ForemanThemeSatellite::Documentation::PLUGINS_DOCUMENTATION[plugin_documentation_params[:name]] || super
   end
 
+  def wiki_url(section: '')
+    documentation_url(section)
+  end
 end
