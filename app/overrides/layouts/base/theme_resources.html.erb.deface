@@ -1,6 +1,4 @@
-<!-- insert_bottom 'head' -->
-<%= favicon_link_tag "foreman_theme_satellite/favicon.ico"%>
-<%= stylesheet_link_tag('foreman_theme_satellite/theme') %>
+<!-- insert_after 'body script:last' -->
 <%= javascript_include_tag('foreman_theme_satellite/theme_dashboard') %>
 <%= javascript_include_tag('foreman_theme_satellite/theme_ng_page_title') %>
 <%= webpacked_plugins_js_for :'foreman_theme_satellite' %>
