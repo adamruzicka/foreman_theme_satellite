@@ -14,6 +14,6 @@ module SettingRegistryBranding
 
   def _add(name, default:, **rest)
     branded_default = branded_settings.fetch(name.to_s, default)
-    super(name, default: branded_default, **rest)
+    super(name, default: branded_default, **rest) unless UpstreamOnlySettings::SETTINGS.include?(name.to_s)
   end
 end
