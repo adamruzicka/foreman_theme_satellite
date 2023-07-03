@@ -90,6 +90,13 @@ module ForemanThemeSatellite
       end
     end
 
+    initializer 'foreman_theme_satellite.rails_loading_workaround' do
+      # Without this, in production environment the module gets prepended too
+      # late and the extensions do not get applied
+      # the idea is stolen from https://github.com/theforeman/foreman_remote_execution/commit/2efd0a6eccfc19e282f453d5629cf46e729963eb
+      ProvisioningTemplatesHelper.prepend ProvisioningTemplatesHelperBranding
+    end
+
     # Include concerns in this config.to_prepare block
     config.to_prepare do
       begin
