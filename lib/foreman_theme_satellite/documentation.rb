@@ -5,8 +5,8 @@ module ForemanThemeSatellite
   module Documentation
     USER_GUIDE_DICTIONARY = {
       # Ansible
-      'ImportingRoles' => "#{ForemanThemeSatellite.documentation_root}/managing_configurations_using_ansible_integration_in_red_hat_satellite/getting-started-with-ansible_ansible#importing-Ansible-roles_ansible",
-      'Variables' => "#{ForemanThemeSatellite.documentation_root}/managing_configurations_using_ansible_integration_in_red_hat_satellite/getting-started-with-ansible_ansible#overriding-Ansible-variables_ansible",
+      'ImportingRoles' => "#{ForemanThemeSatellite.documentation_root}/managing_configurations_using_ansible_integration_in_red_hat_satellite/getting_started_with_ansible_in_satellite_ansible#Importing_Ansible_Roles_and_Variables_ansible",
+      'Variables' => "#{ForemanThemeSatellite.documentation_root}/managing_configurations_using_ansible_integration_in_red_hat_satellite/getting_started_with_ansible_in_satellite_ansible#Overriding_Ansible_Variables_in_satellite_ansible",
 
       # Managing Hosts
       'ForemanRemoteExecution' => "#{ForemanThemeSatellite.documentation_root}/managing_hosts/configuring_and_setting_up_remote_jobs_managing-hosts",
