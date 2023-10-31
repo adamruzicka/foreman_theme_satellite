@@ -135,6 +135,7 @@ module ForemanThemeSatellite
   end
 
   METADATA_PATH = '/usr/share/satellite/metadata.yml'.freeze
+  LIFECYCLE_METADATA_PATH = '/usr/share/satellite/lifecycle-metadata.yml'.freeze
 
   def self.metadata_field(key, default)
     value = ENV["SATELLITE_#{key.upcase}"]
@@ -144,6 +145,10 @@ module ForemanThemeSatellite
 
     @metadata_yaml ||= File.exist?(metadata_path) ? YAML.load_file(metadata_path) : {}
     @metadata_yaml[key] || default
+  end
+
+  def self.lifecycle_data
+    @lifecycle_data ||= ForemanThemeSatellite::Lifecycle.lifecycle_data(get_satellite_version)
   end
 
   def self.get_satellite_version
