@@ -36,16 +36,13 @@ end %>
   if (shouldHide == level && hiddenUntil >= (new Date())) {
       element.style.display = 'none';
   } else {
-    window.onload = function(e) {
-      // We have to do it from a callback because the element may not exist yet
-      document.getElementById('rails-app-content').classList.add('eol-banner');
-    }
+      document.getElementsByTagName("BODY")[0].classList.add('eol-banner');
   }
 
   const dismissButton = document.getElementById('satellite-oel-banner-dismiss-button');
   dismissButton.addEventListener('click', () => {
       element.style.display = 'none';
-      document.getElementById('rails-app-content').classList.remove('eol-banner');
+      document.getElementsByTagName("BODY")[0].classList.remove('eol-banner');
       localStorage.setItem('satellite-eol-banner-dismissed', level);
       const now = new Date();
       const cutoff = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
